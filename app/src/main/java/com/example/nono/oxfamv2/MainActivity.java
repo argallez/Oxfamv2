@@ -31,42 +31,42 @@ public class MainActivity extends AppCompatActivity {
 /* Le prochain produit portera le nombre 25 dans le tableau des entiers*/
     //CHIPS
 
-    Produits Chips_sel = new Produits("Sel", 1.2f, 0);
-    Produits Chips_paprika = new Produits("Paprika", 1.2f, 1);
-    Produits Chips_tacos = new Produits("Tacos", 1.2f, 2);
-    Produits Chips_caca = new Produits("Cacahuètes", 2.5f, 23);
+    Produits Chips_sel = new Produits("Sel","Chips_sel", 1.2f, 0);
+    Produits Chips_paprika = new Produits("Paprika","Chips_paprika", 1.2f, 1);
+    Produits Chips_tacos = new Produits("Tacos","Chips_Tacos", 1.2f, 2);
+    Produits Chips_caca = new Produits("Cacahuètes","Chips_caca", 2.5f, 23);
     //CHOCOLAT
-    Produits Chocolat_lait = new Produits("Lait",0.9f,3);
-    Produits Chocolat_noir = new Produits("Noir",0.9f,4);
-    Produits Chocolat_nois = new Produits("Noisettes",0.9f, 5);
-    Produits Chocolat_praline = new Produits("Praliné",0.9f, 6);
-    Produits Chocolat_blanc = new Produits ("Blanc",0.9f,7);
+    Produits Chocolat_lait = new Produits("Lait","Chocolat_lait",0.9f,3);
+    Produits Chocolat_noir = new Produits("Noir","Chocolat_noir",0.9f,4);
+    Produits Chocolat_nois = new Produits("Noisettes","Chocolat_nois",0.9f, 5);
+    Produits Chocolat_praline = new Produits("Praliné","Chocolat_praline",0.9f, 6);
+    Produits Chocolat_blanc = new Produits ("Blanc","Chocolat_blanc",0.9f,7);
 
     //JUS
-    Produits Jus_orange = new Produits("Orange",0.6f,8);
-    Produits Jus_tropical = new Produits("Tropical",0.6f,9);
-    Produits Jus_world = new Produits("Worldsh.",0.6f,10);
-    Produits Jus_pomme = new Produits("Pomme",0.6f,22);
-    Produits Jus_vidange = new Produits("Vidange",-0.1f,11);
+    Produits Jus_orange = new Produits("Orange","Jus_orange",0.6f,8);
+    Produits Jus_tropical = new Produits("Tropical","Jus_tropical",0.6f,9);
+    Produits Jus_world = new Produits("Worldsh.","Jus_world",0.6f,10);
+    Produits Jus_pomme = new Produits("Pomme","Jus_pomme",0.6f,22);
+    Produits Jus_vidange = new Produits("Vidange","Jus_Vidange",-0.1f,11);
 
     //BONBONS
-    Produits Bon_SuMiel = new Produits("Su. Miel", 0.3f,12);
-    Produits Bon_SaSuMiel = new Produits("Sa. Su. Miel", 1.9f,13);
-    Produits Bon_cafe = new Produits("Bon. Café", 0.1f,14);
-    Produits Bon_SaCafe = new Produits("Sa. Bon. Café.", 1.6f,15);
-    Produits Bon_ourson = new Produits("Oursons", 1.6f,16);
+    Produits Bon_SuMiel = new Produits("Su. Miel","Bon_SuMiel", 0.3f,12);
+    Produits Bon_SaSuMiel = new Produits("Sa. Su. Miel","Bon_SaSuMiel", 1.9f,13);
+    Produits Bon_cafe = new Produits("Bon. Café","Bon_cafe", 0.1f,14);
+    Produits Bon_SaCafe = new Produits("Sa. Bon. Café.","Bon_SaCafe", 1.6f,15);
+    Produits Bon_ourson = new Produits("Oursons","Bon_ourson", 1.6f,16);
 
     //SOFTS
-    Produits Soft_cola = new Produits ("Coca",1.0f,17);
-    Produits Soft_IceTea = new Produits("Ice Tea", 1.0f,18);
-    Produits Soft_limonade = new Produits("Limonade",1.0f,19);
+    Produits Soft_cola = new Produits ("Coca","Soft_cola",1.0f,17);
+    Produits Soft_IceTea = new Produits("Ice Tea","Soft_IceTea", 1.0f,18);
+    Produits Soft_limonade = new Produits("Limonade","Soft_limonade",1.0f,19);
 
     //BARRES
-    Produits Barre_nougat = new Produits ("Nougat",0.6f,20);
-    Produits Barre_sesame = new Produits("Sésame",0.5f,21);
+    Produits Barre_nougat = new Produits ("Nougat","Barre_nougat",0.6f,20);
+    Produits Barre_sesame = new Produits("Sésame","Barre_sesame",0.5f,21);
 
     //PROMOS
-    Produits Promos_jusChoco = new Produits("Jus+Choco.",1.5f,24);
+    Produits Promos_jusChoco = new Produits("Jus+Choco.","Promos_jusChoco",1.5f,24);
 
     public Produits listeProduits[]={Chips_sel, Chips_paprika, Chips_tacos, Chocolat_lait,Chocolat_noir,Chocolat_nois,
             Chocolat_praline,Chocolat_blanc, Jus_orange,Jus_tropical, Jus_vidange, Jus_world, Bon_SuMiel, Bon_SaSuMiel, Bon_cafe,

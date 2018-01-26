@@ -54,7 +54,7 @@ public class Produits{
 
     //Variables d'instance
     private String nomProduits;
-
+    private String instance_name;
     private int nbreProduitsPlus;
     private float prixProduits;
     private int tab;
@@ -62,12 +62,12 @@ public class Produits{
 
 
     //Constructeur
-    public Produits (String pNom, float pPrix, int ptab){
+    public Produits (String pNom, String instance_name, float pPrix, int ptab){
         this.nomProduits= pNom;
         this.prixProduits = pPrix;
         this.nbreProduitsPlus = 0;
         this.tab=ptab;
-
+        this.instance_name = instance_name;
         }
 
     public String toString(){
