@@ -1,0 +1,273 @@
+<?xml version="1.0" encoding="utf-8"?>
+<GridLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent" android:layout_height="match_parent">
+    <Button
+        style="?android:attr/buttonStyleSmall"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/Back"
+        android:id="@+id/back_button"
+        android:layout_row="0"
+        android:layout_column="0" />
+    <ScrollView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/scrollView2"
+        android:layout_gravity="center_horizontal|top"
+        android:layout_column="0"
+        android:layout_row="2">
+
+        <GridLayout
+            android:layout_width="match_parent"
+            android:layout_height="500dp" >
+
+            <ImageView
+                android:layout_width="@dimen/button_width"
+                android:layout_height="@dimen/button_height"
+                android:id="@+id/sel_img"
+                android:src="@mipmap/chips_sel"
+                android:background="@drawable/border"
+                android:layout_column="0"
+                android:layout_row="0"
+                android:layout_marginTop="20dp"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginLeft="10dp"
+                android:padding="5dp" />
+
+            <ImageView
+                android:id="@+id/paprika_img"
+                android:layout_width="@dimen/button_width"
+                android:layout_height="@dimen/button_height"
+                android:layout_alignTop="@+id/lait_img"
+                android:layout_column="1"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginLeft="5dp"
+                android:layout_marginRight="7dp"
+                android:layout_marginTop="20dp"
+                android:layout_row="0"
+                android:layout_toEndOf="@+id/lait_img"
+                android:background="@drawable/border"
+                android:padding="5dp"
+                android:src="@mipmap/chips_paprika" />
+
+            <ImageView
+                android:id="@+id/tacos_img"
+                android:layout_width="@dimen/button_width"
+                android:layout_height="@dimen/button_height"
+                android:layout_below="@+id/lait_img"
+                android:layout_column="0"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginLeft="10dp"
+                android:layout_row="2"
+                android:layout_toStartOf="@+id/noir_button"
+                android:background="@drawable/border"
+                android:padding="5dp"
+                android:src="@mipmap/chips_tacos" />
+
+
+            <ImageView
+                android:id="@+id/caca_img"
+                android:layout_width="@dimen/button_width"
+                android:layout_height="@dimen/button_height"
+                android:layout_column="1"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginLeft="0dp"
+                android:layout_marginTop="0dp"
+                android:layout_row="2"
+                android:background="@drawable/border"
+                android:padding="5dp"
+                android:src="@mipmap/chips_caca" />
+
+            <ImageView
+                android:layout_width="@dimen/clickable_width"
+                android:layout_height="@dimen/clickable_height"
+                android:id="@+id/sel_button"
+                android:src="@mipmap/blank"
+                android:layout_alignStart="@+id/lait_img"
+                android:layout_alignBottom="@+id/lait_img"
+                android:layout_gravity="center"
+                android:layout_column="0"
+                android:layout_row="0" />
+
+            <ImageView
+                android:layout_width="@dimen/clickable_width"
+                android:layout_height="@dimen/clickable_height"
+                android:id="@+id/paprika_button"
+                android:src="@mipmap/blank"
+                android:layout_alignStart="@+id/noit_img"
+                android:layout_alignBottom="@+id/noit_img"
+                android:layout_row="0"
+                android:layout_column="1"
+                android:layout_gravity="center" />
+
+            <ImageView
+                android:id="@+id/caca_button"
+                android:layout_width="@dimen/clickable_width"
+                android:layout_height="@dimen/clickable_height"
+                android:layout_alignBottom="@+id/noit_img"
+                android:layout_alignStart="@+id/noit_img"
+                android:layout_column="1"
+                android:layout_gravity="center"
+                android:layout_row="2"
+                android:src="@mipmap/blank" />
+
+            <ImageView
+                android:layout_width="@dimen/clickable_width"
+                android:layout_height="@dimen/clickable_height"
+                android:id="@+id/tacos_button"
+                android:src="@mipmap/blank"
+                android:layout_alignStart="@+id/tacos_img"
+                android:layout_alignBottom="@+id/tacos_img"
+                android:layout_column="0"
+                android:layout_row="2"
+                android:layout_gravity="center" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_column="0"
+                android:layout_row="3"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/viewNbreTacos"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignStart="@+id/tacos_img"
+                    android:layout_below="@+id/tacos_img"
+                    android:layout_column="0"
+                    android:layout_marginLeft="10dp"
+                    android:layout_row="3"
+                    android:editable="false"
+                    android:enabled="true"
+                    android:text="@string/Nbre_tacos"
+                    android:textAlignment="center"
+                    android:textAppearance="?android:attr/textAppearanceLarge" />
+
+                <TextView
+                    android:id="@+id/viewTacosPlus"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignTop="@+id/viewNbreTacos"
+                    android:layout_column="1"
+                    android:layout_marginLeft="@dimen/space_plus"
+                    android:layout_row="2"
+                    android:layout_toEndOf="@+id/viewNbreTacos"
+                    android:textAppearance="?android:attr/textAppearanceLarge"
+                    android:textColor="#40bf2d" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_column="0"
+                android:layout_row="1">
+
+                <TextView
+                    android:id="@+id/viewNbreSel"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignStart="@+id/lait_img"
+                    android:layout_below="@+id/lait_img"
+                    android:layout_column="0"
+                    android:layout_marginLeft="10dp"
+                    android:layout_row="1"
+                    android:enabled="true"
+                    android:text="@string/Nbre_sel"
+                    android:textAlignment="center"
+
+                    android:textAppearance="?android:attr/textAppearanceLarge" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="?android:attr/textAppearanceLarge"
+                    android:id="@+id/viewSelPlus"
+                    android:layout_column="0"
+                    android:layout_row="1"
+                    android:textColor="#40bf2d"
+                    android:layout_below="@+id/lait_img"
+                    android:layout_toEndOf="@+id/viewNbreSel"
+
+                    android:layout_marginLeft="@dimen/space_plus" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_column="1"
+                android:layout_row="1">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="?android:attr/textAppearanceLarge"
+                    android:id="@+id/viewNbrePaprika"
+                    android:layout_row="1"
+                    android:layout_column="1"
+                    android:textAlignment="center"
+                    android:enabled="true"
+                    android:text= "chipssel.nbreProduits"
+                    android:editable="false"
+                    android:layout_gravity="left|center_vertical"
+                    android:layout_alignTop="@+id/viewSelPlus"
+                    android:layout_alignStart="@+id/noit_img"
+                    android:layout_marginLeft="10dp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="?android:attr/textAppearanceLarge"
+                    android:id="@+id/viewPaprikaPlus"
+                    android:layout_column="1"
+                    android:layout_row="1"
+                    android:textColor="#40bf2d"
+                    android:layout_alignTop="@+id/viewNbrePaprika"
+                    android:layout_toEndOf="@+id/viewNbrePaprika"
+                    android:layout_marginLeft="@dimen/space_plus" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_column="1"
+                android:layout_row="3"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/viewNbreCaca"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignStart="@+id/tacos_img"
+                    android:layout_below="@+id/tacos_img"
+                    android:layout_column="0"
+                    android:layout_marginLeft="10dp"
+                    android:layout_row="3"
+                    android:editable="false"
+                    android:enabled="true"
+                    android:text="@string/Nbre_Caca"
+                    android:textAlignment="center"
+                    android:textAppearance="?android:attr/textAppearanceLarge"
+                    android:textSize="15sp" />
+
+                <TextView
+                    android:id="@+id/viewCacaPlus"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignTop="@+id/viewNbreTacos"
+                    android:layout_column="1"
+                    android:layout_marginLeft="@dimen/space_plus"
+                    android:layout_row="2"
+                    android:layout_toEndOf="@+id/viewNbreTacos"
+                    android:textAppearance="?android:attr/textAppearanceLarge"
+                    android:textColor="#40bf2d"
+                    android:textSize="15sp" />
+            </LinearLayout>
+        </GridLayout>
+    </ScrollView>
+
+</GridLayout>

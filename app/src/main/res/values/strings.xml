@@ -1,0 +1,62 @@
+<resources>
+    <string name="app_name">Oxfamv2</string>
+    <string name="Calculer_addition">Calculer addition</string>
+    <string name="Back"> &lt; &lt; &lt; &lt; </string>
+
+    <!-- Chips -->
+    <string name="Nbre_tacos">Tacos: </string>
+    <string name="Nbre_sel">Sel: </string>
+    <string name="Nbre_paprika">Paprika: </string>
+    <string name="Nbre_Caca">Cacahuètes: </string>
+
+    <!-- MathActivity-->
+    <string name="Chips_math">Chips </string>
+    <string name="Juice_math">Jus </string>
+    <string name="Chocolate_math">Chocolat </string>
+    <string name="Candy_math">Bonbons </string>
+    <string name="Barre_math">Barres </string>
+    <string name="Soft_math">Softs </string>
+    <string name="Vendeurs">Vendeurs </string>
+    <string name="Promos_math">Promos </string>
+
+    <!-- ChocolateActivity -->
+    <string name="Nbre_noir">Noir: </string>
+    <string name="Nbre_lait">Lait: </string>
+    <string name="Nbre_noisette">Noisette: </string>
+    <string name="Nbre_praline">Praline: </string>
+    <string name="Nbre_blanc">Blanc: </string>
+
+    <!-- CandyActivity -->
+    <string name="Nbre_SuMiel">Su. Miel: </string>
+    <string name="Nbre_SaSuMiel">Sa. Su. Miel: </string>
+    <string name="Nbre_BonCafe">Bon. Cafe: </string>
+    <string name="Nbre_SaBonCafe">Sa. Bon. Cafe: </string>
+    <string name="Nbre_SaBonOurson">Oursons: </string>
+
+    <!-- BarreActivity -->
+    <string name="Nbre_sesame">Sésame: </string>
+    <string name="Nbre_nougat">Nougat: </string>
+
+    <!-- SoftActivity -->
+    <string name="Nbre_cola">Cola: </string>
+    <string name="Nbre_icetea">Ice Tea: </string>
+    <string name="Nbre_limonade">Limonade: </string>
+
+    <!-- JuiceActivity -->
+    <string name="Nbre_orange">Orange: </string>
+    <string name="Nbre_tropical">Tropical: </string>
+    <string name="Nbre_world">Worldsh.: </string>
+    <string name="Nbre_pomme">Pomme: </string>
+    <string name="Nbre_vidange">Vidange: </string>
+
+    <!-- Promos Activity -->
+    <string name="Nbre_jus_chocolat">Jus+Choco.: </string>
+    <!-- SplasScreen -->
+    <string name="developed">© Arnaud Gallez </string>
+
+    <!-- NameActivity -->
+    <string name="Name1">Vendeur 1</string>
+    <string name="Name2">Vendeur 2</string>
+    <string name="Name3">Vendeur 3</string>
+    <string name="Name4">Vendeur 4</string>
+</resources>

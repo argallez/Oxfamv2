@@ -1,0 +1,208 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent" android:layout_height="match_parent">
+
+
+    <ScrollView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+
+        android:id="@+id/scrollView"
+        android:fillViewport="false"
+        android:measureAllChildren="false"
+        android:touchscreenBlocksFocus="true"
+        android:layout_gravity="center_horizontal|top">
+
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="fill_parent">
+            <GridLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal|top">
+
+                <ImageView
+                    android:layout_width="@dimen/button_width"
+                    android:layout_height="@dimen/button_height"
+                    android:id="@+id/chips_img"
+                    android:src="@mipmap/chips_main"
+                    android:layout_marginTop="10dp"
+                    android:clickable="false"
+                    android:layout_row="0"
+                    android:layout_column="0"
+                    android:background="@drawable/border"
+                    android:layout_marginLeft="10dp"
+                    android:padding="5dp" />
+
+                <ImageView
+                    android:layout_width="@dimen/clickable_width"
+                    android:layout_height="@dimen/clickable_height"
+                    android:id="@+id/chips_button"
+                    android:layout_column="0"
+                    android:src="@mipmap/blank"
+                    android:layout_gravity="center"
+                    android:layout_row="0" />
+
+                <ImageView
+                    android:layout_width="@dimen/button_width"
+                    android:layout_height="@dimen/button_height"
+                    android:id="@+id/chocolate_img"
+                    android:src="@mipmap/chocolat_main"
+                    android:layout_marginTop="10dp"
+                    android:layout_row="0"
+                    android:layout_column="1"
+                    android:background="@drawable/border"
+                    android:layout_marginLeft="5dp"
+                    android:padding="5dp" />
+
+                <ImageView
+                    android:layout_width="@dimen/clickable_width"
+                    android:layout_height="@dimen/clickable_height"
+                    android:id="@+id/chocolate_button"
+                    android:layout_column="1"
+                    android:src="@mipmap/blank"
+                    android:layout_gravity="center"
+                    android:layout_row="0" />
+
+                <ImageView
+                    android:layout_width="@dimen/button_width"
+                    android:layout_height="@dimen/button_height"
+                    android:id="@+id/juice_img"
+                    android:src="@mipmap/juice_main"
+                    android:adjustViewBounds="false"
+                    android:contentDescription="jus"
+                    android:layout_row="1"
+                    android:layout_column="0"
+                    android:layout_gravity="center_vertical"
+                    android:background="@drawable/border"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginTop="5dp"
+                    android:padding="5dp" />
+
+                <ImageView
+                    android:layout_width="@dimen/clickable_width"
+                    android:layout_height="@dimen/clickable_height"
+                    android:id="@+id/juice_button"
+                    android:layout_column="0"
+                    android:src="@mipmap/blank"
+                    android:layout_gravity="center"
+                    android:layout_row="1" />
+
+                <ImageView
+                    android:layout_width="@dimen/button_width"
+                    android:layout_height="@dimen/button_height"
+                    android:id="@+id/candy_img"
+                    android:src="@mipmap/candy_main"
+                    android:adjustViewBounds="false"
+                    android:contentDescription="jus"
+                    android:layout_row="1"
+                    android:layout_column="1"
+                    android:layout_gravity="center_vertical"
+                    android:background="@drawable/border"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginTop="5dp"
+                    android:padding="5dp" />
+
+                <ImageView
+                    android:layout_width="@dimen/clickable_width"
+                    android:layout_height="@dimen/clickable_height"
+                    android:id="@+id/candy_button"
+                    android:layout_column="1"
+                    android:src="@mipmap/blank"
+                    android:layout_gravity="center"
+                    android:layout_row="1" />
+
+                <ImageView
+                    android:layout_width="@dimen/button_width"
+                    android:layout_height="@dimen/button_height"
+                    android:id="@+id/barre_img"
+                    android:src="@mipmap/barres_main"
+                    android:adjustViewBounds="false"
+                    android:contentDescription="jus"
+                    android:layout_row="3"
+                    android:layout_column="0"
+                    android:layout_gravity="center_vertical"
+                    android:background="@drawable/border"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginTop="5dp"
+                    android:padding="5dp" />
+
+                <ImageView
+                    android:layout_width="@dimen/clickable_width"
+                    android:layout_height="@dimen/clickable_height"
+                    android:id="@+id/barre_button"
+                    android:layout_column="0"
+                    android:src="@mipmap/blank"
+                    android:layout_gravity="center"
+                    android:layout_row="3" />
+
+                <ImageView
+                    android:layout_width="@dimen/button_width"
+                    android:layout_height="@dimen/button_height"
+                    android:id="@+id/soft_img"
+                    android:src="@mipmap/softs_main"
+                    android:adjustViewBounds="false"
+                    android:contentDescription="jus"
+                    android:layout_row="3"
+                    android:layout_column="1"
+                    android:background="@drawable/border"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginTop="5dp"
+                    android:padding="5dp"
+                    android:layout_gravity="center_vertical" />
+
+                <ImageView
+                    android:layout_width="@dimen/clickable_width"
+                    android:layout_height="@dimen/clickable_height"
+                    android:id="@+id/soft_button"
+                    android:layout_column="1"
+                    android:src="@mipmap/blank"
+                    android:layout_gravity="center"
+                    android:layout_row="3" />
+
+                <ImageView
+                    android:id="@+id/promos_img"
+                    android:layout_width="@dimen/button_width"
+                    android:layout_height="@dimen/button_height"
+                    android:layout_column="0"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_row="4"
+                    android:background="@drawable/border"
+                    android:clickable="false"
+                    android:padding="5dp"
+                    android:src="@mipmap/promos_main" />
+
+                <ImageView
+                    android:id="@+id/promos_button"
+                    android:layout_width="@dimen/clickable_width"
+                    android:layout_height="@dimen/clickable_height"
+                    android:layout_column="0"
+                    android:layout_gravity="center"
+                    android:layout_row="4"
+                    android:src="@mipmap/blank" />
+
+                <Space
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:layout_row="6" />
+            </GridLayout>
+
+        </FrameLayout>
+    </ScrollView>
+
+
+    <Button
+        android:id="@+id/addition_button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_column="0"
+        android:layout_columnSpan="12"
+        android:layout_gravity="center_horizontal|bottom"
+        android:layout_row="10"
+
+        android:text="@string/Calculer_addition"
+        android:textAlignment="center" />
+
+</FrameLayout>

@@ -1,0 +1,552 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent" android:layout_height="match_parent" android:orientation="vertical">
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:text="Large Text"
+            android:id="@+id/weekday"
+            android:textStyle="bold"
+            android:capitalize="words" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:text="Large Text"
+            android:id="@+id/date"
+            android:layout_marginLeft="5dp"
+            android:textStyle="bold" />
+
+    </LinearLayout>
+
+    <GridLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:text="@string/Vendeurs"
+            android:id="@+id/vendeurs"
+            android:layout_row="0"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="5dp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:text="Large Text"
+            android:id="@+id/viewVendeur1"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentStart="true"
+            android:layout_column="0"
+            android:layout_row="1"
+            android:layout_marginLeft="25dp"
+            android:autoText="false"
+            android:textColor="@color/colorPrimary"
+            android:textStyle="bold" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:text="Large Text"
+            android:id="@+id/viewVendeur2"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentStart="true"
+            android:layout_marginLeft="25dp"
+            android:layout_row="2"
+            android:layout_column="0"
+            android:autoText="false"
+            android:textColor="@color/colorPrimary"
+            android:textStyle="bold" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:text="Large Text"
+            android:id="@+id/viewVendeur3"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentStart="true"
+            android:layout_column="1"
+            android:layout_row="1"
+            android:autoText="false"
+            android:textColor="@color/colorPrimary"
+            android:textStyle="bold"
+            android:layout_marginLeft="25dp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:text="Large Text"
+            android:id="@+id/viewVendeur4"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentStart="true"
+            android:layout_column="1"
+            android:layout_row="2"
+            android:autoText="false"
+            android:textColor="@color/colorPrimary"
+            android:textStyle="bold"
+            android:layout_marginLeft="25dp" />
+
+    </GridLayout>
+
+    <RelativeLayout android:layout_width="match_parent" android:layout_height="match_parent">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="@string/Chocolate_math"
+        android:id="@+id/chocolate"
+        android:layout_row="0"
+        android:layout_column="2"
+        android:textStyle="bold|italic"
+        android:layout_rowWeight="0"
+        android:layout_gravity="right"
+        android:layout_above="@+id/chips_grid"
+        android:layout_alignStart="@+id/grid_chocolate" />
+
+    <GridLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/grid_chocolate"
+        android:layout_weight="1"
+        android:layout_gravity="center_horizontal"
+        android:layout_row="1"
+        android:layout_column="17"
+        android:layout_alignTop="@+id/chips_grid"
+        android:layout_toEndOf="@+id/chips_grid"
+        android:layout_marginStart="37dp"
+        android:layout_marginBottom="20dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:text="Large Text"
+            android:id="@+id/viewNoirFinal"
+            android:layout_row="0"
+            android:layout_column="2" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:text="Large Text"
+            android:id="@+id/viewLaitFinal"
+            android:layout_row="1"
+            android:layout_column="2" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:text="Large Text"
+            android:id="@+id/viewNoisFinal"
+            android:layout_row="2"
+            android:layout_column="2" />
+
+        <TextView
+            android:id="@+id/viewPralineFinal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_column="2"
+            android:layout_row="3"
+            android:text="Large Text"
+            android:textAppearance="?android:attr/textAppearanceSmall" />
+
+        <TextView
+            android:id="@+id/viewBlancFinal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_column="2"
+            android:layout_row="4"
+            android:text="Large Text"
+            android:textAppearance="?android:attr/textAppearanceSmall" />
+    </GridLayout>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="@string/Chips_math"
+        android:id="@+id/chips"
+        android:layout_row="0"
+        android:layout_column="0"
+        android:textStyle="bold|italic"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="10dp" />
+
+    <GridLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/chips_grid"
+        android:columnCount="5"
+        android:layout_weight="0.95"
+        android:layout_gravity="center_horizontal|top"
+        android:layout_row="1"
+        android:layout_column="0"
+        android:layout_below="@+id/chips"
+        android:layout_alignStart="@+id/chips">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:text="Large Text"
+            android:id="@+id/viewSelFinal"
+            android:layout_row="0"
+            android:layout_column="2" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:text="Large Text"
+            android:id="@+id/viewPaprikaFinal"
+            android:layout_row="1"
+            android:layout_column="2" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:text="Large Text"
+            android:id="@+id/viewTacosFinal"
+            android:layout_row="2"
+            android:layout_column="2" />
+
+        <TextView
+            android:id="@+id/viewCacaFinal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_column="2"
+            android:layout_row="3"
+            android:text="Large Text"
+            android:textAppearance="?android:attr/textAppearanceSmall" />
+    </GridLayout>
+
+        <TextView
+            android:id="@+id/softs"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignStart="@+id/juice_grid"
+            android:layout_alignTop="@+id/barre"
+            android:layout_column="0"
+            android:layout_marginRight="10dp"
+            android:layout_row="0"
+            android:text="@string/Soft_math"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:textStyle="bold|italic" />
+
+        <GridLayout
+            android:id="@+id/softs_grid"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignStart="@+id/softs"
+            android:layout_below="@+id/softs"
+            android:layout_column="0"
+            android:layout_gravity="center_horizontal|top"
+            android:layout_marginRight="10dp"
+            android:layout_row="1"
+            android:layout_weight="0.95"
+            android:columnCount="5">
+
+            <TextView
+                android:id="@+id/viewColaFinal"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_column="2"
+                android:layout_row="0"
+                android:text="Large Text"
+                android:textAppearance="?android:attr/textAppearanceSmall" />
+
+            <TextView
+                android:id="@+id/viewIceteaFinal"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_column="2"
+                android:layout_row="1"
+                android:text="Large Text"
+                android:textAppearance="?android:attr/textAppearanceSmall" />
+
+            <TextView
+                android:id="@+id/viewLimonadeFinal"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_column="2"
+                android:layout_row="2"
+                android:text="Large Text"
+                android:textAppearance="?android:attr/textAppearanceSmall" />
+        </GridLayout>
+
+        <TextView
+            android:id="@+id/jus"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_above="@+id/chips_grid"
+            android:layout_alignStart="@+id/juice_grid"
+            android:layout_column="2"
+            android:layout_marginRight="10dp"
+            android:layout_row="0"
+            android:layout_rowWeight="0"
+            android:text="@string/Juice_math"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:textStyle="bold|italic" />
+
+        <GridLayout
+            android:id="@+id/juice_grid"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignTop="@+id/grid_chocolate"
+            android:layout_column="17"
+            android:layout_gravity="center"
+            android:layout_marginBottom="20dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginStart="37dp"
+            android:layout_row="1"
+            android:layout_toEndOf="@+id/grid_chocolate"
+            android:layout_weight="0.95"
+            android:columnCount="13">
+
+            <TextView
+                android:id="@+id/viewOrangeFinal"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_column="2"
+                android:layout_row="0"
+                android:text="Large Text"
+                android:textAppearance="?android:attr/textAppearanceSmall" />
+
+            <TextView
+                android:id="@+id/viewTropicalFinal"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_column="2"
+                android:layout_row="1"
+                android:text="Large Text"
+                android:textAppearance="?android:attr/textAppearanceSmall" />
+
+            <TextView
+                android:id="@+id/viewVidangeFinal"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_column="2"
+                android:layout_row="4"
+                android:text="Large Text"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:textColor="#c92921" />
+
+            <TextView
+                android:id="@+id/viewWorldFinal"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_above="@+id/chips_grid"
+                android:layout_column="2"
+                android:layout_row="2"
+                android:layout_toEndOf="@+id/viewMontantTotal"
+                android:text="Large Text"
+                android:textAppearance="?android:attr/textAppearanceSmall" />
+
+            <TextView
+                android:id="@+id/viewPommeFinal"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_above="@+id/chips_grid"
+                android:layout_column="2"
+                android:layout_row="3"
+                android:layout_toEndOf="@+id/viewMontantTotal"
+                android:text="Large Text"
+                android:textAppearance="?android:attr/textAppearanceSmall" />
+
+        </GridLayout>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/Barre_math"
+        android:id="@+id/barre"
+        android:layout_row="0"
+        android:layout_column="2"
+        android:textStyle="bold|italic"
+        android:layout_rowWeight="0"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:layout_above="@+id/barre_grid"
+        android:layout_alignStart="@+id/grid_chocolate" />
+
+    <GridLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/barre_grid"
+        android:columnCount="13"
+        android:layout_weight="0.95"
+        android:layout_gravity="center"
+        android:layout_row="1"
+        android:layout_column="17"
+        android:layout_alignTop="@+id/candy_grid"
+        android:layout_alignStart="@+id/barre">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:text="Large Text"
+            android:id="@+id/viewNougatFinal"
+            android:layout_row="0"
+            android:layout_column="2" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:text="Large Text"
+            android:id="@+id/viewSesameFinal"
+            android:layout_row="1"
+            android:layout_column="2" />
+
+    </GridLayout>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/candy"
+        android:layout_row="0"
+        android:layout_column="2"
+        android:textStyle="bold|italic"
+        android:layout_rowWeight="0"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="@string/Candy_math"
+        android:layout_below="@+id/grid_chocolate"
+        android:layout_alignStart="@+id/candy_grid" />
+
+        <GridLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/candy_grid"
+        android:columnCount="13"
+        android:layout_weight="0.95"
+        android:layout_gravity="center"
+        android:layout_row="1"
+        android:layout_column="17"
+        android:layout_below="@+id/candy"
+        android:layout_alignStart="@+id/chips_grid">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:text="Large Text"
+            android:id="@+id/viewSuMielFinal"
+            android:layout_row="0"
+            android:layout_column="2" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:text="Large Text"
+            android:id="@+id/viewSaSuMielFinal"
+            android:layout_row="1"
+            android:layout_column="2" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:text="Large Text"
+            android:id="@+id/viewBonCafeFinal"
+            android:layout_row="2"
+            android:layout_column="2"
+            android:layout_above="@+id/chips_grid"
+            android:layout_toEndOf="@+id/viewMontantTotal" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:text="Large Text"
+            android:id="@+id/viewSaBonCafeFinal"
+            android:layout_row="3"
+            android:layout_column="2" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:text="Large Text"
+            android:id="@+id/viewSaBonOursonFinal"
+            android:layout_row="4"
+            android:layout_column="2"
+            android:layout_below="@+id/candy_grid"
+            android:layout_alignStart="@+id/candy_grid" />
+
+    </GridLayout>
+
+        <TextView
+            android:id="@+id/promos"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@+id/grid_promos"
+            android:layout_alignStart="@+id/grid_promos"
+            android:layout_column="2"
+            android:layout_marginBottom="17dp"
+            android:layout_row="0"
+            android:layout_rowWeight="0"
+            android:text="@string/Promos_math"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:textStyle="bold|italic" />
+        <GridLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/grid_promos"
+            android:layout_weight="1"
+            android:layout_gravity="center_horizontal"
+            android:layout_row="1"
+            android:layout_column="17"
+
+            android:layout_below="@+id/candy_grid"
+            android:layout_alignStart="@+id/candy_grid"
+            android:layout_marginTop="41dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:text="Large Text"
+                android:id="@+id/viewJusChocoFinal"
+                android:layout_row="0"
+                android:layout_column="2" />
+
+
+        </GridLayout>
+        <TextView
+            android:id="@+id/viewMontantTotal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:layout_column="12"
+            android:layout_row="6"
+            android:gravity="center"
+            android:text="Large Text"
+            android:textAppearance="?android:attr/textAppearanceLarge" />
+
+    </RelativeLayout>
+
+</LinearLayout>

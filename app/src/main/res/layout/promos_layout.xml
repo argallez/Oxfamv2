@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<GridLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent" android:layout_height="match_parent">
+    <Button
+        style="?android:attr/buttonStyleSmall"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/Back"
+        android:id="@+id/back_button"
+        android:layout_row="0"
+        android:layout_column="0" />
+
+    <ScrollView
+        android:id="@+id/scrollView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_column="0"
+        android:layout_gravity="top|center_horizontal"
+        android:layout_row="1">
+
+        <GridLayout
+            android:layout_width="match_parent"
+            android:layout_height="500dp">
+
+            <ImageView
+                android:id="@+id/juschoco_img"
+                android:layout_width="@dimen/button_width"
+                android:layout_height="@dimen/button_height"
+                android:layout_column="0"
+                android:layout_gravity="left|top"
+                android:layout_marginLeft="7dp"
+                android:layout_marginTop="10dp"
+                android:layout_row="0"
+                android:background="@drawable/border"
+                android:clickable="false"
+                android:padding="5dp"
+                android:src="@mipmap/promos_jus_chocolat" />
+
+            <ImageView
+                android:id="@+id/juschoco_button"
+                android:layout_width="@dimen/clickable_width"
+                android:layout_height="@dimen/clickable_height"
+                android:layout_column="0"
+                android:layout_gravity="center"
+                android:layout_row="0"
+                android:src="@mipmap/blank" />
+
+            <LinearLayout
+                android:id="@+id/LinearJusChoco"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_column="0"
+                android:layout_marginLeft="10dp"
+                android:layout_row="1"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/viewNbreJusChoco"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_column="0"
+                    android:layout_row="1"
+                    android:text="@string/Nbre_jus_chocolat"
+                    android:textAppearance="?android:attr/textAppearanceMedium" />
+
+                <TextView
+                    android:id="@+id/viewJusChocoPlus"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/space_plus"
+                    android:textAppearance="?android:attr/textAppearanceMedium"
+                    android:textColor="@color/plusText" />
+
+            </LinearLayout>
+
+
+
+            <Space
+                android:layout_width="1dp"
+                android:layout_height="80dp"
+                android:layout_column="0"
+                android:layout_row="5" />
+
+        </GridLayout>
+    </ScrollView>
+
+</GridLayout>

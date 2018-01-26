@@ -1,0 +1,204 @@
+<?xml version="1.0" encoding="utf-8"?>
+<GridLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent" android:layout_height="wrap_content"
+    android:columnCount="2"
+    android:rowCount="4">
+
+    <Button
+        style="?android:attr/buttonStyleSmall"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/Back"
+        android:id="@+id/back_button"
+        android:layout_row="0"
+        android:layout_column="0" />
+
+    <GridLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+        android:layout_row="1"
+        android:layout_column="0">
+
+        <ImageView
+            android:layout_width="@dimen/button_width"
+            android:layout_height="@dimen/button_height"
+            android:id="@+id/cola_img"
+            android:src="@mipmap/softs_cola"
+            android:background="@drawable/border"
+            android:layout_column="0"
+            android:layout_row="0"
+            android:layout_marginTop="20dp"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginLeft="10dp"
+            android:padding="5dp" />
+
+        <ImageView
+            android:id="@+id/icetea_img"
+            android:layout_width="@dimen/button_width"
+            android:layout_height="@dimen/button_height"
+            android:layout_column="1"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginRight="7dp"
+            android:layout_marginTop="20dp"
+            android:layout_row="0"
+            android:layout_toEndOf="@+id/lait_img"
+            android:background="@drawable/border"
+            android:padding="5dp"
+            android:src="@mipmap/softs_icetea" />
+
+        <ImageView
+            android:layout_width="@dimen/button_width"
+            android:layout_height="@dimen/button_height"
+            android:id="@+id/limondade_img"
+            android:src="@mipmap/softs_limondade"
+            android:layout_gravity="center_horizontal"
+            android:background="@drawable/border"
+            android:padding="5dp"
+            android:layout_below="@+id/lait_img"
+            android:layout_toStartOf="@+id/noir_button"
+            android:layout_row="2"
+            android:layout_column="0"/>
+
+
+        <ImageView
+            android:layout_width="@dimen/clickable_width"
+            android:layout_height="@dimen/clickable_height"
+            android:id="@+id/cola_button"
+            android:src="@mipmap/blank"
+            android:layout_alignStart="@+id/lait_img"
+            android:layout_alignBottom="@+id/lait_img"
+            android:layout_gravity="center"
+            android:layout_column="0"
+            android:layout_row="0" />
+
+        <ImageView
+            android:layout_width="@dimen/clickable_width"
+            android:layout_height="@dimen/clickable_height"
+            android:id="@+id/icetea_button"
+            android:src="@mipmap/blank"
+            android:layout_alignStart="@+id/noit_img"
+            android:layout_alignBottom="@+id/noit_img"
+            android:layout_row="0"
+            android:layout_column="1"
+            android:layout_gravity="center" />
+
+        <ImageView
+            android:layout_width="@dimen/clickable_width"
+            android:layout_height="@dimen/clickable_height"
+            android:id="@+id/limonade_button"
+            android:src="@mipmap/blank"
+            android:layout_alignStart="@+id/tacos_img"
+            android:layout_alignBottom="@+id/tacos_img"
+            android:layout_column="0"
+            android:layout_row="2"
+            android:layout_gravity="center" />
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_column="0"
+            android:layout_row="1"
+            android:id="@+id/LinearCola">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:id="@+id/viewNbreCola"
+                android:layout_row="1"
+                android:layout_column="0"
+                android:enabled="true"
+                android:text="@string/Nbre_cola"
+                android:textAlignment="center"
+                android:layout_below="@+id/lait_img"
+                android:layout_alignStart="@+id/lait_img"
+
+                android:layout_marginLeft="10dp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:id="@+id/viewColaPlus"
+                android:layout_column="0"
+                android:layout_row="1"
+                android:textColor="#40bf2d"
+                android:layout_below="@+id/lait_img"
+                android:layout_toEndOf="@+id/viewNbreSel"
+
+                android:layout_marginLeft="@dimen/space_plus" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_column="1"
+            android:layout_row="1"
+            android:id="@+id/LinearIcetea">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:id="@+id/viewNbreIcetea"
+                android:layout_row="1"
+                android:layout_column="1"
+                android:textAlignment="center"
+                android:enabled="true"
+                android:text="@string/Nbre_icetea"
+                android:editable="false"
+                android:layout_gravity="left|center_vertical"
+                android:layout_alignTop="@+id/viewSelPlus"
+                android:layout_alignStart="@+id/noit_img"
+                android:layout_marginLeft="10dp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:id="@+id/viewIceteaPlus"
+                android:layout_column="1"
+                android:layout_row="1"
+                android:textColor="#40bf2d"
+                android:layout_alignTop="@+id/viewNbrePaprika"
+                android:layout_toEndOf="@+id/viewNbrePaprika"
+                android:layout_marginLeft="@dimen/space_plus" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_column="0"
+            android:layout_row="3"
+            android:id="@+id/LinearLimonade">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:id="@+id/viewNbreLimonade"
+                android:layout_row="3"
+                android:layout_column="0"
+                android:textAlignment="center"
+                android:enabled="true"
+                android:text="@string/Nbre_limonade"
+                android:editable="false"
+                android:layout_below="@+id/tacos_img"
+                android:layout_alignStart="@+id/tacos_img"
+                android:layout_marginLeft="10dp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:id="@+id/viewLimonadePlus"
+                android:layout_column="1"
+                android:layout_row="2"
+                android:textColor="#40bf2d"
+                android:layout_alignTop="@+id/viewNbreTacos"
+                android:layout_toEndOf="@+id/viewNbreTacos"
+                android:layout_marginLeft="@dimen/space_plus" />
+        </LinearLayout>
+    </GridLayout>
+</GridLayout>
