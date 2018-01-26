@@ -25,6 +25,7 @@ public class MainScreen extends AppCompatActivity {
             @Override
             public boolean onTouch(View v, MotionEvent event) {
                 Intent chips_start = new Intent(MainScreen.this, Chips.class);
+                chips_start.putExtra("Uniqid","Student");
                 startActivity(chips_start);
                 return false;
             }
@@ -35,6 +36,7 @@ public class MainScreen extends AppCompatActivity {
             @Override
             public boolean onTouch(View v, MotionEvent event) {
                 Intent chocolate_start = new Intent(MainScreen.this, Chocolate.class);
+                chocolate_start.putExtra("Uniqid","Student");
                 startActivity(chocolate_start);
                 return false;
             }
@@ -45,6 +47,7 @@ public class MainScreen extends AppCompatActivity {
             @Override
             public boolean onTouch(View v, MotionEvent event) {
                 Intent juice_start = new Intent(MainScreen.this, Juice.class);
+                juice_start.putExtra("Uniqid","Student");
                 startActivity(juice_start);
                 return false;
             }
@@ -55,6 +58,7 @@ public class MainScreen extends AppCompatActivity {
             @Override
             public boolean onTouch(View v, MotionEvent event) {
                 Intent candy_start = new Intent(MainScreen.this, Candy.class);
+                candy_start.putExtra("Uniqid","Student");
                 startActivity(candy_start);
                 return false;
             }
@@ -65,6 +69,7 @@ public class MainScreen extends AppCompatActivity {
             @Override
             public boolean onTouch(View v, MotionEvent event) {
                 Intent soft_start = new Intent(MainScreen.this, Soft.class);
+                soft_start.putExtra("Uniqid","Student");
                 startActivity(soft_start);
                 return false;
             }
@@ -75,6 +80,7 @@ public class MainScreen extends AppCompatActivity {
             @Override
             public boolean onTouch(View v, MotionEvent event) {
                 Intent barre_start = new Intent(MainScreen.this, Barre.class);
+                barre_start.putExtra("Uniqid","Student");
                 startActivity(barre_start);
                 return false;
             }
@@ -94,6 +100,7 @@ public class MainScreen extends AppCompatActivity {
             @Override
             public boolean onTouch(View v, MotionEvent event) {
                 Intent promos_start = new Intent(MainScreen.this, Promos.class);
+                promos_start.putExtra("Uniqid","Student");
                 startActivity(promos_start);
                 return false;
             }

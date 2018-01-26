@@ -9,24 +9,52 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.AppCompat.Light.NoActionBar">
-        <activity android:name=".Splashscreen" >
-
+        <activity android:name=".Splashscreen">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-    <activity android:name=".MainScreen" android:screenOrientation="portrait"/>
-        <activity android:name=".Chips" android:screenOrientation="portrait"/>
-    <activity android:name=".MainActivity" android:screenOrientation="portrait"/>
-    <activity android:name=".FinalAddition" android:screenOrientation="portrait"/>
-    <activity android:name=".Chocolate" android:screenOrientation="portrait"/>
-    <activity android:name=".Juice" android:screenOrientation="portrait"/>
-    <activity android:name=".Candy" android:screenOrientation="portrait"/>
-    <activity android:name=".Soft" android:screenOrientation="portrait"/>
-    <activity android:name=".Barre" android:screenOrientation="portrait"/>
-    <activity android:name=".Name" android:screenOrientation="portrait"/>
-    <activity android:name=".Promos" android:screenOrientation="portrait"/>
+        <activity
+            android:name=".MainScreen"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".Chips"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".MainActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".FinalAddition"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".Chocolate"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".Juice"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".Candy"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".Soft"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".Barre"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".Name"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".Promos"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".Choice"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".Secure"
+            android:screenOrientation="portrait" />
     </application>
 
 </manifest>

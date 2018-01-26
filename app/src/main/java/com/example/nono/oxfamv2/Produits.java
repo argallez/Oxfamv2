@@ -13,12 +13,32 @@ import static com.example.nono.oxfamv2.MainActivity.tabQuant;
  */
 
 public class Produits{
+
+    //Variables d'instance
+    private static int ID = 1;
+    private String nomProduits;
+
+    private int nbreProduitsPlus;
+    private float prixProduits;
+    private int tab;
+    private int stock;
+    private  int id;
+
+    //Constructeur
+
+    public Produits (String pNom, float pPrix, int ptab){
+        this.nomProduits= pNom;
+        this.prixProduits = pPrix;
+        this.nbreProduitsPlus = 0;
+        this.tab=ptab;
+        this.id = ID;
+        ID++;
+    }
+
     //Getters & Setters
     public String getNomProduits() {
         return nomProduits;
     }
-
-
 
     public int getNbreProduitsPlus() {
         return nbreProduitsPlus;
@@ -36,8 +56,6 @@ public class Produits{
         this.nomProduits = nomProduits;
     }
 
-
-
     public void setNbreProduitsPlus(int nbreProduitsPlus) {
         this.nbreProduitsPlus = nbreProduitsPlus;
     }
@@ -50,25 +68,15 @@ public class Produits{
         this.tab = tab;
     }
 
+    public void setStock(int stock) {
+        this.stock = stock;
+    }
 
+    public int getStock() {
+        return this.stock;
+    }
 
-    //Variables d'instance
-    private String nomProduits;
-
-    private int nbreProduitsPlus;
-    private float prixProduits;
-    private int tab;
-
-
-
-    //Constructeur
-    public Produits (String pNom, float pPrix, int ptab){
-        this.nomProduits= pNom;
-        this.prixProduits = pPrix;
-        this.nbreProduitsPlus = 0;
-        this.tab=ptab;
-
-        }
-
-
+    public int getId() {
+        return this.id;
+    }
 }

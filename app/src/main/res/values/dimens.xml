@@ -7,4 +7,6 @@
     <dimen name="clickable_width">90dp</dimen>
     <dimen name="clickable_height">90dp</dimen>
     <dimen name="space_plus">2dp</dimen>
+    <dimen name="fab_margin">16dp</dimen>
+    <dimen name="appbar_padding_top">8dp</dimen>
 </resources>

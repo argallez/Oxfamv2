@@ -38,7 +38,7 @@ public class Splashscreen extends MainActivity {
 
             @Override
             public void onAnimationEnd(Animation animation) {
-                Intent main_start= new Intent (Splashscreen.this,MainScreen.class);
+                Intent main_start= new Intent (Splashscreen.this,Choice.class);
                 startActivity(main_start);
                 finish();
             }

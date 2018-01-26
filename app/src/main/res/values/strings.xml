@@ -59,4 +59,7 @@
     <string name="Name2">Vendeur 2</string>
     <string name="Name3">Vendeur 3</string>
     <string name="Name4">Vendeur 4</string>
+    <string name="title_activity_prof">ProfActivity</string>
+    <string name="action_settings">Settings</string>
+    <string name="section_format">Hello World from section: %1$d</string>
 </resources>
