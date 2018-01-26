@@ -1,5 +1,6 @@
 package com.example.nono.oxfamv2;
 
+import android.content.Context;
 import android.content.Intent;
 import android.media.Image;
 import android.os.Bundle;
@@ -12,6 +13,9 @@ import android.widget.TextView;
 
 import org.w3c.dom.Text;
 
+import java.io.File;
+import java.io.IOException;
+import java.io.OutputStreamWriter;
 import java.io.PrintWriter;
 import java.util.Calendar;
 
@@ -27,7 +31,7 @@ public class MainActivity extends AppCompatActivity {
 /* Le prochain produit portera le nombre 25 dans le tableau des entiers*/
     //CHIPS
 
-    Produits Chips_sel= new Produits("Sel", 1.2f, 0);
+    Produits Chips_sel = new Produits("Sel", 1.2f, 0);
     Produits Chips_paprika = new Produits("Paprika", 1.2f, 1);
     Produits Chips_tacos = new Produits("Tacos", 1.2f, 2);
     Produits Chips_caca = new Produits("Cacahuètes", 2.5f, 23);
@@ -175,20 +179,5 @@ public class MainActivity extends AppCompatActivity {
         }
         recette=(recette*100)/100;
     }
-    //Imprime le fichier reprenant les ventes de la journee
-    public void print(){
-        PrintWriter pr;
-        try{
-            Calendar rightNow = Calendar.getInstance();
-            String date = rightNow.get(Calendar.DAY_OF_MONTH)+"-"+rightNow.get(Calendar.MONTH)+"-"+rightNow.get(Calendar.YEAR);
-            pr = new PrintWriter(date);
-            pr.println(date);
-            for (int i = 0;i<10;i++)
-                pr.print('-');
-            pr.println("Chips"+"    "+"Chocolats"+"     "+ "Jus");
-        }
-        catch (Exception e){
 
-        }
-    }
 }
