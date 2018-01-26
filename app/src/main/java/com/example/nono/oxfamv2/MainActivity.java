@@ -61,7 +61,7 @@ public class MainActivity extends AppCompatActivity {
     //PROMOS
     Produits Promos_jusChoco = new Produits("Jus+Choco.",1.5f,24);
 
-    public Produits[] listeProduits={Chips_sel, Chips_paprika, Chips_tacos, Chocolat_lait,Chocolat_noir,Chocolat_nois,
+    public Produits listeProduits[]={Chips_sel, Chips_paprika, Chips_tacos, Chocolat_lait,Chocolat_noir,Chocolat_nois,
             Chocolat_praline,Chocolat_blanc, Jus_orange,Jus_tropical, Jus_vidange, Jus_world, Bon_SuMiel, Bon_SaSuMiel, Bon_cafe,
             Bon_SaCafe, Bon_ourson,Soft_cola,Soft_IceTea,Soft_limonade,Barre_nougat, Barre_sesame, Jus_pomme, Chips_caca, Promos_jusChoco};
 
@@ -137,8 +137,10 @@ public class MainActivity extends AppCompatActivity {
                 textProduitPlus.setText("+" + objet.getNbreProduitsPlus());
             }
         });
-    }
 
+
+
+    }
     public void back_button(Button button) {
         final Intent backI = new Intent(this, MainScreen.class);
         button.setOnClickListener(new View.OnClickListener() {
@@ -168,9 +170,5 @@ public class MainActivity extends AppCompatActivity {
             recette=recette+tabAdditionFinale[j];
         }
         recette=(recette*100)/100;
-    }
-
-    public Produits[] getListProduit() {
-        return listeProduits;
     }
 }
