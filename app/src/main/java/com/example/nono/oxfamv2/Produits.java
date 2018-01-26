@@ -70,5 +70,7 @@ public class Produits{
 
         }
 
-
+    public String toString(){
+        return this.getNomProduits()+": "+tabQuant[this.getTab()];
+    }
 }

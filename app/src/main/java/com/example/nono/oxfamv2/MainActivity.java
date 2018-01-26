@@ -12,6 +12,9 @@ import android.widget.TextView;
 
 import org.w3c.dom.Text;
 
+import java.io.PrintWriter;
+import java.util.Calendar;
+
 public class MainActivity extends AppCompatActivity {
 
     public static String vendeur1;
@@ -162,6 +165,7 @@ public class MainActivity extends AppCompatActivity {
     int longueur=listeProduits.length;
     public float tabAdditionFinale[]=new float[longueur];
     public float recette;
+    //Calcule l'addition totale de la journee
     public void calculAddition() {
         for (int i = 0; i < longueur; i++) {
             tabAdditionFinale[i] = tabQuant[listeProduits[i].getTab()] * listeProduits[i].getPrixProduits();
@@ -170,5 +174,21 @@ public class MainActivity extends AppCompatActivity {
             recette=recette+tabAdditionFinale[j];
         }
         recette=(recette*100)/100;
+    }
+    //Imprime le fichier reprenant les ventes de la journee
+    public void print(){
+        PrintWriter pr;
+        try{
+            Calendar rightNow = Calendar.getInstance();
+            String date = rightNow.get(Calendar.DAY_OF_MONTH)+"-"+rightNow.get(Calendar.MONTH)+"-"+rightNow.get(Calendar.YEAR);
+            pr = new PrintWriter(date);
+            pr.println(date);
+            for (int i = 0;i<10;i++)
+                pr.print('-');
+            pr.println("Chips"+"    "+"Chocolats"+"     "+ "Jus");
+        }
+        catch (Exception e){
+
+        }
     }
 }
