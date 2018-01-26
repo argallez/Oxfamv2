@@ -32,11 +32,21 @@ public class Produits{
         return tab;
     }
 
+    public int getId() {
+        return this.id;
+    }
+
+    public int getStock() {
+        return this.stock;
+    }
+
     public void setNomProduits(String nomProduits) {
         this.nomProduits = nomProduits;
     }
 
-
+    public void setStock(int stock) {
+        this.stock = stock;
+    }
 
     public void setNbreProduitsPlus(int nbreProduitsPlus) {
         this.nbreProduitsPlus = nbreProduitsPlus;
@@ -58,6 +68,9 @@ public class Produits{
     private int nbreProduitsPlus;
     private float prixProduits;
     private int tab;
+    private static int ID = 1;
+    private int id;
+    private int stock;
 
 
 
@@ -67,6 +80,8 @@ public class Produits{
         this.prixProduits = pPrix;
         this.nbreProduitsPlus = 0;
         this.tab=ptab;
+        this.id = ID;
+        ID++;
 
         }
 

@@ -171,4 +171,8 @@ public class MainActivity extends AppCompatActivity {
         }
         recette=(recette*100)/100;
     }
+
+    public Produits[] getListeProduits() {
+        return listeProduits;
+    }
 }

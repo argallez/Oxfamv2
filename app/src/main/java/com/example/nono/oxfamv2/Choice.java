@@ -37,7 +37,7 @@ public class Choice extends AppCompatActivity {
 
         final StockDB STOCK_DB = new StockDB(this);
         final MainActivity MAIN_ACTIVITY = new MainActivity();
-        final Produits[] PRODUCTS= MAIN_ACTIVITY.getListProduit();
+        final Produits[] PRODUCTS= MAIN_ACTIVITY.getListeProduits();
 
        Cursor res = STOCK_DB.getData();
 
@@ -45,7 +45,7 @@ public class Choice extends AppCompatActivity {
 
         if(STOCK_DB.empty()) {
 
-            for(int i = 0; i < MAIN_ACTIVITY.getListProduit().length; i++) {
+            for(int i = 0; i < MAIN_ACTIVITY.getListeProduits().length; i++) {
 
                 ContentValues contentValues = new ContentValues();
                 contentValues.put(PRODUCTNAME ,PRODUCTS[i].getNomProduits());
