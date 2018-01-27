@@ -1,21 +1,15 @@
 package com.example.nono.oxfamv2;
 
-import android.media.Image;
-import android.view.MotionEvent;
-import android.view.View;
-import android.widget.ImageView;
-import android.widget.TextView;
-
 import static com.example.nono.oxfamv2.MainActivity.tabQuant;
 
 /**
  * Created by Nono on 24-08-17.
  */
 
-public class Produits{
+public class Produits implements Comparable{
     //Variables d'instance
     private String nomProduits;
-    private String instance_name;
+    private String category;
     private int nbreProduitsPlus;
     private float prixProduits;
     private int tab;
@@ -26,12 +20,12 @@ public class Produits{
 
 
     //Constructeur
-    public Produits (String pNom, String instance_name, float pPrix, int ptab){
+    public Produits (String pNom, String category, float pPrix, int ptab){
         this.nomProduits= pNom;
         this.prixProduits = pPrix;
         this.nbreProduitsPlus = 0;
         this.tab=ptab;
-        this.instance_name = instance_name;
+        this.category = category;
         this.id = ID;
         ID++;
 
@@ -76,16 +70,23 @@ public class Produits{
         this.stock = stock;
     }
 
-    public String getInstance_name() {
-        return instance_name;
+    public String getCategory() {
+        return category;
     }
-    public void setInstance_name(String instance_name) {
-        this.instance_name = instance_name;
+    public void setCategory(String category) {
+        this.category = category;
     }
 
 
    //Methodes de classe
     public String toString(){
         return this.getNomProduits()+": "+tabQuant[this.getTab()];
+    }
+    /*
+    * CompareTo : trie alphabetiquement en fonction de category
+    * */
+    public int compareTo(Object other){
+        Produits o = (Produits) other;
+        return (this.getCategory().compareTo(o.getCategory()));
     }
 }

@@ -4,13 +4,14 @@ import android.content.Context;
 import android.os.Bundle;
 import android.os.Environment;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.io.File;
-import java.io.FileOutputStream;
 import java.io.IOException;
-import java.io.OutputStreamWriter;
 import java.io.PrintWriter;
+import java.util.ArrayList;
 import java.util.Calendar;
+import java.util.Collections;
 import java.util.Locale;
 
 /**
@@ -18,49 +19,7 @@ import java.util.Locale;
  */
 
 public class FinalAddition extends MainActivity {
-    public void print2() {
-        PrintWriter pr;
 
-        try {
-            //Nom du fichier
-            Calendar rightNow = Calendar.getInstance();
-            String date = rightNow.get(Calendar.DAY_OF_MONTH) + "-" + rightNow.get(Calendar.MONTH) + "-" + rightNow.get(Calendar.YEAR);
-            String fileName = date.concat(".txt");
-
-
-            File file = new File(Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOCUMENTS),fileName);
-            pr = new PrintWriter(file);
-
-
-            //On commence a ecrire dans le fichier
-            pr.println(date);
-            pr.println("--------------------------------------------------------");
-            String first = "Chips";
-            String[] a;
-            for(int j = 0;j<listeProduits.length;j++)
-            {
-                a = (listeProduits[j].toString()).split(" ");
-                if(a[0].equals(first))
-                    pr.println(listeProduits[j].toString());
-
-                else{
-                    pr.println();
-                    first = a[0];
-                    pr.println(first);
-                }
-            }
-
-        pr.close();
-        System.out.println("terminé");
-            System.out.println("Fichier créé!");
-        } catch (IndexOutOfBoundsException e) {
-            System.out.println("Fichier non créé! OOB ");
-
-        } catch (IOException p) {
-            System.out.println("Fichier non créé! IO " + "msg: " + p.toString());
-
-        }
-    }
         @Override
         protected void onCreate (Bundle savedInstanceState){
             super.onCreate(savedInstanceState);
@@ -131,7 +90,7 @@ public class FinalAddition extends MainActivity {
             affichageRecette.setText("Recette Totale: " + recette + "€");
 
 
-            print2();
+            printDay();
         }
 
     }
