@@ -14,7 +14,7 @@ public class Promos extends MainActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.promos_layout);
-        Button back = (Button) findViewById(R.id.back_button);
+        Button back = findViewById(R.id.back_button);
         back_button(back);
 
     achat(Promos_jusChoco,(TextView) findViewById(R.id.viewNbreJusChoco),(TextView) findViewById(R.id.viewJusChocoPlus), (ImageView)findViewById(R.id.juschoco_button));

@@ -17,8 +17,6 @@ public class Produits implements Comparable{
     private int id;
     private int stock;
 
-
-
     //Constructeur
     public Produits (String pNom, String category, float pPrix, int ptab){
         this.nomProduits= pNom;
@@ -82,9 +80,11 @@ public class Produits implements Comparable{
     public String toString(){
         return this.getNomProduits()+": "+tabQuant[this.getTab()];
     }
-    /*
+
+    /**
     * CompareTo : trie alphabetiquement en fonction de category
-    * */
+    */
+
     public int compareTo(Object other){
         Produits o = (Produits) other;
         return (this.getCategory().compareTo(o.getCategory()));

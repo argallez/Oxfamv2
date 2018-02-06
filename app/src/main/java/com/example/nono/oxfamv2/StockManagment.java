@@ -3,8 +3,9 @@ package com.example.nono.oxfamv2;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
-import android.database.Cursor;
 import android.os.Bundle;
+import android.os.Parcel;
+import android.os.Parcelable;
 import android.support.v4.app.Fragment;
 import android.support.v7.app.AlertDialog;
 import android.view.LayoutInflater;
@@ -16,11 +17,18 @@ import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import java.util.ArrayList;
+import java.util.List;
+
+import static android.icu.lang.UCharacter.GraphemeClusterBreak.T;
+
 /**
  * Created by BasilFabris on 26/01/2018.
  */
 
 public class StockManagment extends Fragment {
+
+    List<Product_Stock> stock = StockDB.getData();
 
     private final Context CONTEXT = getActivity();
     private final StockDB STOCK_DB = new StockDB(getActivity());
@@ -30,27 +38,30 @@ public class StockManagment extends Fragment {
         View view = inflater.inflate(R.layout.activity_main, container, false);
 
         Button AddButton = view.findViewById(R.id.addition_button);
-        AddButton.setVisibility(view.GONE);
+        AddButton.setVisibility(View.GONE);
         return view;
-
     }
 
     @Override
     public void onActivityCreated(Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
 
-        ImageView myChips = (ImageView) getView().findViewById(R.id.chips_button);
+        System.out.println("Log: Stock size "+stock.size());
+
+        ImageView myChips = getView().findViewById(R.id.chips_button);
         assert myChips != null;
         myChips.setOnTouchListener(new View.OnTouchListener() {
             @Override
             public boolean onTouch(View v, MotionEvent event) {
                 Intent chips_start = new Intent(getActivity(), Chips.class);
                 chips_start.putExtra("Uniqid","Prof");
+                chips_start.putExtra("List", (ArrayList<? extends Parcelable>) stock);
                 startActivity(chips_start);
                 return false;
             }
         });
-        ImageView myChocolate = (ImageView) getView().findViewById(R.id.chocolate_button);
+
+        ImageView myChocolate = getView().findViewById(R.id.chocolate_button);
         assert myChocolate != null;
         myChocolate.setOnTouchListener(new View.OnTouchListener() {
             @Override
@@ -61,7 +72,8 @@ public class StockManagment extends Fragment {
                 return false;
             }
         });
-        ImageView myJuice = (ImageView) getView().findViewById(R.id.juice_button);
+
+        ImageView myJuice = getView().findViewById(R.id.juice_button);
         assert myJuice != null;
         myJuice.setOnTouchListener(new View.OnTouchListener() {
             @Override
@@ -72,7 +84,8 @@ public class StockManagment extends Fragment {
                 return false;
             }
         });
-        ImageView myCandy = (ImageView) getView().findViewById(R.id.candy_button);
+
+        ImageView myCandy = getView().findViewById(R.id.candy_button);
         assert myCandy != null;
         myCandy.setOnTouchListener(new View.OnTouchListener() {
             @Override
@@ -83,7 +96,8 @@ public class StockManagment extends Fragment {
                 return false;
             }
         });
-        ImageView mySoft = (ImageView) getView().findViewById(R.id.soft_button);
+
+        ImageView mySoft = getView().findViewById(R.id.soft_button);
         assert mySoft != null;
         mySoft.setOnTouchListener(new View.OnTouchListener() {
             @Override
@@ -94,18 +108,21 @@ public class StockManagment extends Fragment {
                 return false;
             }
         });
-        ImageView myBarre = (ImageView) getView().findViewById(R.id.barre_button);
+
+        ImageView myBarre = getView().findViewById(R.id.barre_button);
         assert myBarre != null;
         myBarre.setOnTouchListener(new View.OnTouchListener() {
             @Override
             public boolean onTouch(View v, MotionEvent event) {
                 Intent barre_start = new Intent(getActivity(), Barre.class);
                 barre_start.putExtra("Uniqid","Prof");
+                barre_start.putExtra("List", (ArrayList<? extends Parcelable>) stock);
                 startActivity(barre_start);
                 return false;
             }
         });
-        Button myAddition = (Button) getView().findViewById(R.id.addition_button);
+
+        Button myAddition = getView().findViewById(R.id.addition_button);
         assert myAddition != null;
         myAddition.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -115,7 +132,8 @@ public class StockManagment extends Fragment {
                 startActivity(addition_start);
             }
         });
-        ImageView myPromos = (ImageView) getView().findViewById(R.id.promos_button);
+
+        ImageView myPromos = getView().findViewById(R.id.promos_button);
         assert myPromos!= null;
         myPromos.setOnTouchListener(new View.OnTouchListener() {
             @Override
@@ -126,33 +144,5 @@ public class StockManagment extends Fragment {
                 return false;
             }
         });
-    }
-
-    public void ajouté(final Produits objet, final TextView textProduit, final TextView textProduitPlus, ImageView imageProduit) {
-
-            textProduit.setText(objet.getNomProduits() + ": " + objet.getStock());
-
-            assert textProduit != null;
-
-            imageProduit.setOnTouchListener(new View.OnTouchListener() {
-                @Override
-                public boolean onTouch(View v, MotionEvent event) {
-                    AlertDialog.Builder alert = new AlertDialog.Builder(getActivity());
-                    alert.setTitle(objet.getNomProduits());
-
-                    final EditText input = new EditText(getActivity());
-                    input.setText("");
-                    alert.setView(input);
-
-                    alert.setPositiveButton("Ajouter", new DialogInterface.OnClickListener() {
-                        public void onClick(DialogInterface dialog, int whichButton) {
-                            STOCK_DB.stockUpdate(String.valueOf(objet.getId()), input.getText().toString());
-                        }
-                    });
-
-                    alert.show();
-                    return true;
-                }
-            });
     }
 }

@@ -1,15 +1,22 @@
 package com.example.nono.oxfamv2;
 
+import android.annotation.SuppressLint;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.media.Image;
 import android.os.Bundle;
 import android.os.Environment;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
+import android.text.InputType;
+import android.view.MenuItem;
 import android.view.MotionEvent;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -32,12 +39,13 @@ public class MainActivity extends AppCompatActivity {
 
     //DECLARATION DES PRODUITS
 /* Le prochain produit portera le nombre 25 dans le tableau des entiers*/
-    //CHIPS
 
+    //CHIPS
     Produits Chips_sel= new Produits("Sel","Chips", 1.2f, 0);
     Produits Chips_paprika = new Produits("Paprika","Chips", 1.2f, 1);
     Produits Chips_tacos = new Produits("Tacos","Chips", 1.2f, 2);
     Produits Chips_caca = new Produits("Cacahuètes","Chips", 2.5f, 23);
+
     //CHOCOLAT
     Produits Chocolat_lait = new Produits("Lait","Chocolat",0.9f,3);
     Produits Chocolat_noir = new Produits("Noir","Chocolat",0.9f,4);
@@ -115,15 +123,103 @@ public class MainActivity extends AppCompatActivity {
     //BARRES
     public static int nbreBarreSesame;
     public static int nbreBarreNougat;
+
     //PROMOS
     public static int nbrePromosJusChoco;
+
     public static int tabQuant[]={nbreChipsSel,nbreChipsPaprika,nbreChipsTacos,nbreChocolatLait,nbreChocolatNoir,nbreChocolatNois,
             nbreChocolatPraline,nbreChocolatBlanc,nbreJusOrange,nbreJusTropical,nbreJusWorldSh,nbreJusVidange,nbreBonSuMiel,nbreBonSaSuMiel,
             nbreBonCafe,nbreBonSaCafe,nbreBonOurson, nbreSoftCola, nbreSoftIceTea,nbreSoftLimonade, nbreBarreNougat,nbreBarreSesame,nbreJusPomme,
-    nbreChipsCaca, nbrePromosJusChoco};
+            nbreChipsCaca, nbrePromosJusChoco};
 
+    //METHODES STOCK
 
+    @SuppressLint("ClickableViewAccessibility")
+    public void stock (final Product_Stock objet, final TextView textProduit, final TextView textProduitPlus, ImageView imageProduit) {
 
+        textProduit.setText(objet.getName() + ": " + objet.getStock());
+
+        assert textProduit != null;
+
+        imageProduit.setOnTouchListener(new View.OnTouchListener() {
+
+            @Override
+            public boolean onTouch(View v, MotionEvent event) {
+                AlertDialog.Builder alert = new AlertDialog.Builder(MainActivity.this);
+
+                alert.setTitle("Gestion des stocks");
+
+                final TextView aj = new TextView(MainActivity.this);
+                aj.setText("Ajouter au stock");
+                alert.setView(aj);
+
+                final EditText input = new EditText(MainActivity.this);
+                alert.setView(input);
+
+                final TextView modif = new TextView(MainActivity.this);
+                modif.setText("Modifier le stock total");
+
+                String givenStock = String.valueOf(objet.getStock());
+
+                final EditText editModif = new EditText(MainActivity.this);
+                editModif.setText(givenStock);
+                alert.setView(editModif);
+
+                alert.setPositiveButton("Sauvegarder", new DialogInterface.OnClickListener() {
+
+                    public void onClick(DialogInterface dialog, int whichButton) {
+                        StockDB stockDB= new StockDB(MainActivity.this);
+                        stockDB.stockUpdate(objet, input.getText().toString());
+                    }
+                });
+
+                input.setInputType(InputType.TYPE_CLASS_NUMBER | InputType.TYPE_NUMBER_FLAG_DECIMAL);
+                editModif.setInputType(InputType.TYPE_CLASS_NUMBER | InputType.TYPE_NUMBER_FLAG_DECIMAL);
+
+                LinearLayout ll = new LinearLayout(MainActivity.this);
+                ll.setOrientation(LinearLayout.VERTICAL);
+                ll.addView(aj);
+                ll.addView(input);
+                ll.addView(modif);
+                ll.addView(editModif);
+                alert.setView(ll);
+
+                alert.setCancelable(true);
+
+                alert.setPositiveButton("Sauvegarder", new DialogInterface.OnClickListener() {
+
+                    public void onClick(DialogInterface dialog, int whichButton) {
+
+                        if(Integer.parseInt(editModif.getText().toString()) == objet.getStock() && input.getText() != null) {
+
+                            System.out.println("Log: first condition");
+                            StockDB stockDB = new StockDB(MainActivity.this);
+
+                            String addedValue = String.valueOf(Integer.parseInt(input.getText().toString()) + objet.getStock());
+
+                            textProduit.setText(objet.getName() + ": " + addedValue);
+                            stockDB.stockUpdate(objet, addedValue);
+                        }
+
+                        else if(!(Integer.parseInt(editModif.getText().toString()) == objet.getStock())) {
+
+                            System.out.println("Log: second condition");
+                            StockDB stockDB = new StockDB(MainActivity.this);
+
+                            textProduit.setText(objet.getName() + ": " + editModif.getText().toString());
+
+                            stockDB.stockUpdate(objet, editModif.getText().toString());
+                        }
+                        else
+                            System.out.println("Log: Pas dans la condition");
+                    }
+                });
+
+                alert.show();
+            return false;
+            }
+        });
+    }
 
     //METHODES PRINCIPALES
     public void achat (final Produits objet, final TextView textProduit, final TextView textProduitPlus, ImageView imageProduit){
@@ -151,8 +247,6 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-
-
     }
     public void back_button(Button button) {
         final Intent backI = new Intent(this, MainScreen.class);
@@ -163,7 +257,7 @@ public class MainActivity extends AppCompatActivity {
                 finish();
             }
         });
-    };
+    }
 
     //CALCUL ET AFFICHAGE DE L'ADDITION
     public void affichageTotal (final Produits objet, final TextView viewFinal){

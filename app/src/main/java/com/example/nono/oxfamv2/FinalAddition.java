@@ -27,15 +27,15 @@ public class FinalAddition extends MainActivity {
             //DATE
             Calendar rightNow = Calendar.getInstance();
             String dayLongName = rightNow.getDisplayName(Calendar.DAY_OF_WEEK, Calendar.LONG, Locale.getDefault());
-            TextView weekday = (TextView) findViewById(R.id.weekday);
+            TextView weekday = findViewById(R.id.weekday);
             weekday.setText(dayLongName);
-            TextView date = (TextView) findViewById(R.id.date);
+            TextView date = findViewById(R.id.date);
             date.setText(rightNow.get(Calendar.DAY_OF_MONTH) + "/" + rightNow.get(Calendar.MONTH) + "/" + rightNow.get(Calendar.YEAR));
 
-            TextView viewVendeur1 = (TextView) findViewById(R.id.viewVendeur1);
-            TextView viewVendeur2 = (TextView) findViewById(R.id.viewVendeur2);
-            TextView viewVendeur3 = (TextView) findViewById(R.id.viewVendeur3);
-            TextView viewVendeur4 = (TextView) findViewById(R.id.viewVendeur4);
+            TextView viewVendeur1 = findViewById(R.id.viewVendeur1);
+            TextView viewVendeur2 = findViewById(R.id.viewVendeur2);
+            TextView viewVendeur3 = findViewById(R.id.viewVendeur3);
+            TextView viewVendeur4 = findViewById(R.id.viewVendeur4);
 
             System.out.println(vendeur1);
             viewVendeur1.setText(vendeur1);
@@ -86,7 +86,7 @@ public class FinalAddition extends MainActivity {
             affichageTotal(Promos_jusChoco, (TextView) findViewById(R.id.viewJusChocoFinal));
 
             calculAddition();
-            TextView affichageRecette = (TextView) findViewById(R.id.viewMontantTotal);
+            TextView affichageRecette = findViewById(R.id.viewMontantTotal);
             affichageRecette.setText("Recette Totale: " + recette + "€");
 
 

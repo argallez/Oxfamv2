@@ -17,11 +17,11 @@ public class Name extends MainActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.name_layout);
 
-        final EditText editName1 = (EditText) findViewById(R.id.name1);
-        final EditText editName2 = (EditText) findViewById(R.id.name2);
-        final EditText editName3 = (EditText) findViewById(R.id.name3);
-        final EditText editName4 = (EditText) findViewById(R.id.name4);
-        Button myButton = (Button) findViewById(R.id.button);
+        final EditText editName1 = findViewById(R.id.name1);
+        final EditText editName2 = findViewById(R.id.name2);
+        final EditText editName3 = findViewById(R.id.name3);
+        final EditText editName4 = findViewById(R.id.name4);
+        Button myButton = findViewById(R.id.button);
         myButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

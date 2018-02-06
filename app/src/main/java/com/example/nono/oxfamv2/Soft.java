@@ -22,7 +22,7 @@ public class Soft extends MainActivity {
         String strdata = intent.getExtras().getString("Uniqid");
 
         if(!(strdata.equals("Prof"))) {
-            Button back = (Button) findViewById(R.id.back_button);
+            Button back = findViewById(R.id.back_button);
             back_button(back);
             achat(Soft_cola,(TextView) findViewById(R.id.viewNbreCola),(TextView) findViewById(R.id.viewColaPlus), (ImageView)findViewById(R.id.cola_button));
             achat(Soft_IceTea,(TextView) findViewById(R.id.viewNbreIcetea),(TextView) findViewById(R.id.viewIceteaPlus), (ImageView)findViewById(R.id.icetea_button));
@@ -33,9 +33,9 @@ public class Soft extends MainActivity {
 
             StockManagment sm = new StockManagment();
 
-            sm.ajouté(Soft_cola,(TextView) findViewById(R.id.viewNbreCola),(TextView) findViewById(R.id.viewColaPlus), (ImageView)findViewById(R.id.cola_button));
-            sm.ajouté(Soft_IceTea,(TextView) findViewById(R.id.viewNbreIcetea),(TextView) findViewById(R.id.viewIceteaPlus), (ImageView)findViewById(R.id.icetea_button));
-            sm.ajouté(Soft_limonade,(TextView) findViewById(R.id.viewNbreLimonade),(TextView) findViewById(R.id.viewLimonadePlus), (ImageView)findViewById(R.id.limonade_button));
+            //sm.ajouté(Soft_cola,(TextView) findViewById(R.id.viewNbreCola),(TextView) findViewById(R.id.viewColaPlus), (ImageView)findViewById(R.id.cola_button));
+            //sm.ajouté(Soft_IceTea,(TextView) findViewById(R.id.viewNbreIcetea),(TextView) findViewById(R.id.viewIceteaPlus), (ImageView)findViewById(R.id.icetea_button));
+            //sm.ajouté(Soft_limonade,(TextView) findViewById(R.id.viewNbreLimonade),(TextView) findViewById(R.id.viewLimonadePlus), (ImageView)findViewById(R.id.limonade_button));
 
             final Intent backI = new Intent(this, Secure.class);
 

@@ -21,7 +21,7 @@ public class Chocolate extends MainActivity {
         String strdata = intent.getExtras().getString("Uniqid");
 
         if(!(strdata.equals("Prof"))) {
-            Button back = (Button) findViewById(R.id.back_button);
+            Button back = findViewById(R.id.back_button);
             back_button(back);
             achat(Chocolat_lait,(TextView) findViewById(R.id.viewNbreLait),(TextView) findViewById(R.id.viewLaitPlus), (ImageView)findViewById(R.id.lait_button));
             achat(Chocolat_noir,(TextView) findViewById(R.id.viewNbreNoir),(TextView) findViewById(R.id.viewNoirPlus), (ImageView)findViewById(R.id.noir_button));

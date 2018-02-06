@@ -39,32 +39,7 @@ public class Choice extends AppCompatActivity {
         final MainActivity MAIN_ACTIVITY = new MainActivity();
         final Produits[] PRODUCTS= MAIN_ACTIVITY.getListeProduits();
 
-       Cursor res = STOCK_DB.getData();
-
-        int counter = 0;
-
-        if(STOCK_DB.empty()) {
-
-            for(int i = 0; i < MAIN_ACTIVITY.getListeProduits().length; i++) {
-
-                ContentValues contentValues = new ContentValues();
-                contentValues.put(PRODUCTNAME ,PRODUCTS[i].getNomProduits());
-                contentValues.put(DISPONIBILITY, 0);
-
-                STOCK_DB.insert(contentValues);
-            }
-        }
-        else {
-
-            while (res.moveToNext() && counter < PRODUCTS.length) {
-                if(!(res.getString(1).isEmpty())) {
-                    PRODUCTS[counter].setStock(Integer.parseInt(res.getString(2)));
-                }
-                counter++;
-            }
-        }
-
-        ImageView myProf = (ImageView) findViewById(R.id.prof_session);
+        ImageView myProf = findViewById(R.id.prof_session);
         assert myProf != null;
         myProf.setOnTouchListener(new View.OnTouchListener() {
             @Override
@@ -102,7 +77,7 @@ public class Choice extends AppCompatActivity {
             }
         });
 
-        ImageView myStudent = (ImageView) findViewById(R.id.student_session);
+        ImageView myStudent = findViewById(R.id.student_session);
         assert myStudent != null;
         myStudent.setOnTouchListener(new View.OnTouchListener() {
             @Override

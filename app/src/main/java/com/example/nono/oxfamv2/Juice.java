@@ -21,7 +21,7 @@ public class Juice extends MainActivity {
         String strdata = intent.getExtras().getString("Uniqid");
 
         if(!(strdata.equals("Prof"))) {
-            Button back = (Button) findViewById(R.id.back_button);
+            Button back = findViewById(R.id.back_button);
             back_button(back);
 
             achat(Jus_orange,(TextView) findViewById(R.id.viewNbreOrange),(TextView) findViewById(R.id.viewOrangePlus), (ImageView)findViewById(R.id.orange_button));

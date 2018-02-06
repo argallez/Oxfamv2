@@ -19,7 +19,7 @@ public class MainScreen extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        ImageView myChips = (ImageView)findViewById(R.id.chips_button);
+        ImageView myChips = findViewById(R.id.chips_button);
         assert myChips != null;
         myChips.setOnTouchListener(new View.OnTouchListener() {
             @Override
@@ -30,7 +30,7 @@ public class MainScreen extends AppCompatActivity {
                 return false;
             }
         });
-        ImageView myChocolate = (ImageView)findViewById(R.id.chocolate_button);
+        ImageView myChocolate = findViewById(R.id.chocolate_button);
         assert myChocolate != null;
         myChocolate.setOnTouchListener(new View.OnTouchListener() {
             @Override
@@ -41,7 +41,7 @@ public class MainScreen extends AppCompatActivity {
                 return false;
             }
         });
-        ImageView myJuice = (ImageView)findViewById(R.id.juice_button);
+        ImageView myJuice = findViewById(R.id.juice_button);
         assert myJuice != null;
         myJuice.setOnTouchListener(new View.OnTouchListener() {
             @Override
@@ -52,7 +52,7 @@ public class MainScreen extends AppCompatActivity {
                 return false;
             }
         });
-        ImageView myCandy = (ImageView)findViewById(R.id.candy_button);
+        ImageView myCandy = findViewById(R.id.candy_button);
         assert myCandy != null;
         myCandy.setOnTouchListener(new View.OnTouchListener() {
             @Override
@@ -63,7 +63,7 @@ public class MainScreen extends AppCompatActivity {
                 return false;
             }
         });
-        ImageView mySoft = (ImageView)findViewById(R.id.soft_button);
+        ImageView mySoft = findViewById(R.id.soft_button);
         assert mySoft != null;
         mySoft.setOnTouchListener(new View.OnTouchListener() {
             @Override
@@ -74,7 +74,7 @@ public class MainScreen extends AppCompatActivity {
                 return false;
             }
         });
-        ImageView myBarre = (ImageView)findViewById(R.id.barre_button);
+        ImageView myBarre = findViewById(R.id.barre_button);
         assert myBarre != null;
         myBarre.setOnTouchListener(new View.OnTouchListener() {
             @Override
@@ -85,7 +85,7 @@ public class MainScreen extends AppCompatActivity {
                 return false;
             }
         });
-        Button myAddition = (Button) findViewById(R.id.addition_button);
+        Button myAddition = findViewById(R.id.addition_button);
         assert myAddition != null;
         myAddition.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -94,7 +94,7 @@ public class MainScreen extends AppCompatActivity {
                 startActivity(addition_start);
             }
         });
-        ImageView myPromos = (ImageView)findViewById(R.id.promos_button);
+        ImageView myPromos = findViewById(R.id.promos_button);
         assert myPromos!= null;
         myPromos.setOnTouchListener(new View.OnTouchListener() {
             @Override

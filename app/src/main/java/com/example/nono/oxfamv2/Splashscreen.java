@@ -1,11 +1,15 @@
 package com.example.nono.oxfamv2;
 
 import android.content.Intent;
+import android.database.SQLException;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.widget.ImageView;
+
+import java.io.IOException;
+import java.util.ArrayList;
 
 /**
  * Created by Nono on 04-09-17.
@@ -26,14 +30,19 @@ public class Splashscreen extends MainActivity {
                 }
             }
         };
+
         sleep.start();
-        final ImageView logo = (ImageView)findViewById(R.id.logo);
+        final ImageView logo = findViewById(R.id.logo);
         final Animation anim = AnimationUtils.loadAnimation(getBaseContext(),R.anim.rotation);
         logo.startAnimation(anim);
         anim.setAnimationListener(new Animation.AnimationListener() {
             @Override
             public void onAnimationStart(Animation animation) {
 
+                StockDB stock = new StockDB(Splashscreen.this);
+                stock.initialization();
+
+                System.out.println("Log: test");
             }
 
             @Override
@@ -49,5 +58,4 @@ public class Splashscreen extends MainActivity {
             }
         });
     }
-
 }
