@@ -132,7 +132,7 @@ public class MainActivity extends AppCompatActivity {
             nbreBonCafe,nbreBonSaCafe,nbreBonOurson, nbreSoftCola, nbreSoftIceTea,nbreSoftLimonade, nbreBarreNougat,nbreBarreSesame,nbreJusPomme,
             nbreChipsCaca, nbrePromosJusChoco};
 
-    //METHODES STOCK
+    //METHODES STOCK n
 
     @SuppressLint("ClickableViewAccessibility")
     public void stock (final Product_Stock objet, final TextView textProduit, final TextView textProduitPlus, ImageView imageProduit) {
