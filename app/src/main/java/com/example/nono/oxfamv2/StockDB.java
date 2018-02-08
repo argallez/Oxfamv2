@@ -112,6 +112,10 @@ public class StockDB extends SQLiteOpenHelper {
         obj.setStock(amount);
     }
 
+    public void stockDeduct() {
+
+    }
+
     public static ArrayList getData() {
        return data;
     }

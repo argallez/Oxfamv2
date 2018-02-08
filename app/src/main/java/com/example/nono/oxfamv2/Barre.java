@@ -34,11 +34,6 @@ public class Barre extends MainActivity {
 
             final Intent backI = new Intent(this, Secure.class);
 
-            boolean passed = false;
-            boolean done = false;
-
-            // A optimiser
-
             for(int i = 0; i < stockList.size(); i++) {
 
                 System.out.println("Log: " + stockList.get(i).getName());

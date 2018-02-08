@@ -224,6 +224,7 @@ public class MainActivity extends AppCompatActivity {
     //METHODES PRINCIPALES
     public void achat (final Produits objet, final TextView textProduit, final TextView textProduitPlus, ImageView imageProduit){
         textProduit.setText(objet.getNomProduits() + ": " + tabQuant[objet.getTab()]);
+
         assert textProduit != null;
         imageProduit.setOnTouchListener(new View.OnTouchListener() {
             @Override
@@ -234,7 +235,6 @@ public class MainActivity extends AppCompatActivity {
                 textProduitPlus.setText("+" + objet.getNbreProduitsPlus());
                 System.out.println(tabQuant[objet.getTab()]);
                 return false;
-
             }
         });
         textProduitPlus.setOnClickListener(new View.OnClickListener() {
