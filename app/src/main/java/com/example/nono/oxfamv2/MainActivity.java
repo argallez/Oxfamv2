@@ -64,11 +64,11 @@ public class MainActivity extends AppCompatActivity {
     Produits Jus_vidange = new Produits("Vidange","Jus",-0.1f,11);
 
     //BONBONS
-    Produits Bon_SuMiel = new Produits("Su. Miel","Bon", 0.3f,12);
-    Produits Bon_SaSuMiel = new Produits("Sa. Su. Miel","Bon", 1.9f,13);
-    Produits Bon_cafe = new Produits("Bon. Café","Bon", 0.1f,14);
-    Produits Bon_SaCafe = new Produits("Sa. Bon. Café.","Bon", 1.6f,15);
-    Produits Bon_ourson = new Produits("Oursons","Bon", 1.6f,16);
+    Produits Bon_SuMiel = new Produits("Su. Miel","Bonbons", 0.3f,12);
+    Produits Bon_SaSuMiel = new Produits("Sa. Su. Miel","Bonbons", 1.9f,13);
+    Produits Bon_cafe = new Produits("Bon. Café","Bonbons", 0.1f,14);
+    Produits Bon_SaCafe = new Produits("Sa. Bon. Café.","Bonbons", 1.6f,15);
+    Produits Bon_ourson = new Produits("Oursons","Bonbons", 1.6f,16);
 
     //SOFTS
     Produits Soft_cola = new Produits ("Coca","Soft",1.0f,17);
@@ -329,8 +329,10 @@ public class MainActivity extends AppCompatActivity {
             pr.println(vendeur1+"    "+vendeur2);
             pr.println(vendeur3+"    "+vendeur4);
             pr.println("--------------------------------------------------------");
+
             String first = listeTriee.get(0).getCategory();
             pr.println(first);
+            pr.println("-----------------");
             String a;
             for(int j = 0;j<listeTriee.size();j++)
             {
@@ -351,7 +353,7 @@ public class MainActivity extends AppCompatActivity {
             //Affichage du Toast
             Context context = getApplicationContext();
             CharSequence text = "Fichier correctement imprimé!";
-            int duration = Toast.LENGTH_LONG;
+            int duration = Toast.LENGTH_SHORT;
             Toast toast = Toast.makeText(context, text, duration);
             toast.show();
             pr.close();//Fermeture du flux

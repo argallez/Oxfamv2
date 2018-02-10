@@ -89,7 +89,6 @@ public class FinalAddition extends MainActivity {
             TextView affichageRecette = findViewById(R.id.viewMontantTotal);
             affichageRecette.setText("Recette Totale: " + recette + "€");
 
-
             printDay();
         }
 
