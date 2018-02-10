@@ -6,7 +6,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 /**
- * Created by Nono on 02-11-17.
+ * Classe comme les autres categories de produits (pas de DB)
  */
 
 public class Promos extends MainActivity {

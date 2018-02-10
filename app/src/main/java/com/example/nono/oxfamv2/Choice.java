@@ -7,9 +7,13 @@ import android.content.Intent;
 import android.content.res.Resources;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
+import android.graphics.Color;
+import android.graphics.Typeface;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
+import android.text.InputType;
+import android.view.Gravity;
 import android.view.MotionEvent;
 import android.view.View;
 import android.widget.EditText;
@@ -47,10 +51,20 @@ public class Choice extends AppCompatActivity {
 
                 AlertDialog.Builder alert = new AlertDialog.Builder(Choice.this);
 
-                alert.setTitle("mot de passe");
+                //Creation du titre
+                TextView myChoicePsw = new TextView(Choice.this);
+                myChoicePsw.setText("Mot de passe");
+                myChoicePsw.setTextSize(25);
+                myChoicePsw.setTypeface(null, Typeface.BOLD);
+                myChoicePsw.setGravity(Gravity.CENTER_HORIZONTAL);
+                myChoicePsw.setTextColor(Color.DKGRAY);
+
+                alert.setCustomTitle(myChoicePsw);
 
                 final EditText input = new EditText((Choice.this));
+                input.setInputType(InputType.TYPE_CLASS_NUMBER);
                 input.setText("");
+                input.setGravity(Gravity.CENTER_HORIZONTAL);
                 alert.setView(input);
 
                 alert.setPositiveButton("Enter", new DialogInterface.OnClickListener() {
@@ -65,6 +79,7 @@ public class Choice extends AppCompatActivity {
                                 startActivity(prof_start);
                             } else {
                                 System.out.println("Wrong psw");
+                                Toast.makeText(Choice.this, "Mauvais mot de passe", Toast.LENGTH_SHORT).show();
                             }
                         } catch(Exception e) {
                             Toast.makeText(Choice.this, "Mauvais mot de passe", Toast.LENGTH_SHORT).show();

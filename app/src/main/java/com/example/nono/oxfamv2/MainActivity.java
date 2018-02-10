@@ -4,12 +4,15 @@ import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.graphics.Color;
+import android.graphics.Typeface;
 import android.media.Image;
 import android.os.Bundle;
 import android.os.Environment;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.text.InputType;
+import android.view.Gravity;
 import android.view.MenuItem;
 import android.view.MotionEvent;
 import android.view.View;
@@ -132,7 +135,7 @@ public class MainActivity extends AppCompatActivity {
             nbreBonCafe,nbreBonSaCafe,nbreBonOurson, nbreSoftCola, nbreSoftIceTea,nbreSoftLimonade, nbreBarreNougat,nbreBarreSesame,nbreJusPomme,
             nbreChipsCaca, nbrePromosJusChoco};
 
-    //METHODES STOCK n
+    //METHODES STOCK
 
     @SuppressLint("ClickableViewAccessibility")
     public void stock (final Product_Stock objet, final TextView textProduit, final TextView textProduitPlus, ImageView imageProduit) {
@@ -147,22 +150,33 @@ public class MainActivity extends AppCompatActivity {
             public boolean onTouch(View v, MotionEvent event) {
                 AlertDialog.Builder alert = new AlertDialog.Builder(MainActivity.this);
 
-                alert.setTitle("Gestion des stocks");
+                //Creation du titre
+                TextView myTitle = new TextView(MainActivity.this);
+                myTitle.setText("Gestion des stocks");
+                myTitle.setTextSize(25);
+                myTitle.setTypeface(null,Typeface.BOLD);
+                myTitle.setGravity(Gravity.CENTER_HORIZONTAL);
+                myTitle.setTextColor(Color.DKGRAY);
+                alert.setCustomTitle(myTitle);
 
                 final TextView aj = new TextView(MainActivity.this);
                 aj.setText("Ajouter au stock");
+                aj.setGravity(Gravity.CENTER_HORIZONTAL);
                 alert.setView(aj);
 
                 final EditText input = new EditText(MainActivity.this);
                 alert.setView(input);
+                input.setGravity(Gravity.CENTER_HORIZONTAL);
 
                 final TextView modif = new TextView(MainActivity.this);
                 modif.setText("Modifier le stock total");
+                modif.setGravity(Gravity.CENTER_HORIZONTAL);
 
                 String givenStock = String.valueOf(objet.getStock());
 
                 final EditText editModif = new EditText(MainActivity.this);
                 editModif.setText(givenStock);
+                editModif.setGravity(Gravity.CENTER_HORIZONTAL);
                 alert.setView(editModif);
 
                 alert.setPositiveButton("Sauvegarder", new DialogInterface.OnClickListener() {
@@ -178,6 +192,7 @@ public class MainActivity extends AppCompatActivity {
 
                 LinearLayout ll = new LinearLayout(MainActivity.this);
                 ll.setOrientation(LinearLayout.VERTICAL);
+
                 ll.addView(aj);
                 ll.addView(input);
                 ll.addView(modif);
