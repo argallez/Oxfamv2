@@ -318,6 +318,13 @@ public class MainActivity extends AppCompatActivity {
             }
             Collections.sort(listeTriee);
 
+            ArrayList<Product_Stock> stockTrie = new ArrayList<>();
+            for(int b=0;b<StockDB.getData().size();b++)
+            {
+                stockTrie.add((Product_Stock)StockDB.getData().get(b));
+            }
+            Collections.sort(stockTrie);
+
             File file = new File(Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOCUMENTS),fileName);//Creation du fichier
             pr = new PrintWriter(file);
 
@@ -338,13 +345,13 @@ public class MainActivity extends AppCompatActivity {
             {
                 a = (listeTriee.get(j).getCategory());
                 if(a.equals(first))
-                    pr.println(listeTriee.get(j).toString());
+                    pr.println(listeTriee.get(j).toString()+" - Reste: "+stockTrie.get(j).getStock());
                 else{
                     pr.println();
                     first = a;
                     pr.println(first);
                     pr.println("-----------------");
-                    pr.println(listeTriee.get(j));
+                    pr.println(listeTriee.get(j).toString()+" - Reste: "+stockTrie.get(j).getStock());
                 }
             }
             pr.println("--------------------------------------------------------");
@@ -358,8 +365,17 @@ public class MainActivity extends AppCompatActivity {
             toast.show();
             pr.close();//Fermeture du flux
         } catch (IOException p) {
-            System.out.println("Fichier non créé! IO " + "msg: " + p.toString());
-            pr.close();
+            Toast toast = Toast.makeText(getApplicationContext(), "Erreur: IOException: Mentionner à Mme Deceuninck", Toast.LENGTH_SHORT);
+            toast.show();
+            System.out.println(p.getMessage());
+            if(pr!=null)
+                    pr.close();
+        }
+        catch (IndexOutOfBoundsException m){
+            Toast toast = Toast.makeText(getApplicationContext(), "Erreur: OutOfBoundsException: Mentionner à Mme Deceuninck", Toast.LENGTH_SHORT);
+            toast.show();
+            if(pr!=null)
+                pr.close();
         }
     }
 }

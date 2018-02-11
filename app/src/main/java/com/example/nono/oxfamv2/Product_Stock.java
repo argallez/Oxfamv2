@@ -7,7 +7,7 @@ import android.os.Parcelable;
  * Created by BasilFabris on 03/02/2018.
  */
 
-public class Product_Stock implements Parcelable{
+public class Product_Stock implements Parcelable, Comparable{
 
     private int ID;
     private String type;
@@ -74,4 +74,10 @@ public class Product_Stock implements Parcelable{
     }
 
     public String getID() { return  String.valueOf(this.ID);}
+
+    public int compareTo(Object other)
+    {
+        Product_Stock o = (Product_Stock) other;
+        return this.getType().compareTo(o.getType());
+    }
 }
