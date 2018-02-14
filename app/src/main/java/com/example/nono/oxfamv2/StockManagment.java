@@ -40,13 +40,29 @@ public class StockManagment extends Fragment {
         Button AddButton = view.findViewById(R.id.addition_button);
         AddButton.setVisibility(View.GONE);
 
+        Button studentButton = view.findViewById(R.id.backStudent);
+        studentButton.setVisibility(view.GONE);
+
         ImageView promo = view.findViewById(R.id.promos_img);
         promo.setVisibility(View.GONE);
 
         ImageView promosBtn = view.findViewById(R.id.promos_button);
         promosBtn.setVisibility(View.GONE);
 
+        Button backProf = view.findViewById(R.id.backProf);
+        backProf(backProf);
+
         return view;
+    }
+
+    public void backProf(Button button) {
+        final Intent backI = new Intent(getActivity(), Choice.class);
+        button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(backI);
+            }
+        });
     }
 
     @Override
