@@ -350,8 +350,7 @@
                 android:layout_column="2"
                 android:layout_row="4"
                 android:text="Large Text"
-                android:textAppearance="?android:attr/textAppearanceSmall"
-                android:textColor="#c92921" />
+                android:textAppearance="?android:attr/textAppearanceSmall" />
 
             <TextView
                 android:id="@+id/viewWorldFinal"

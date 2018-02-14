@@ -17,14 +17,19 @@ public class Produits implements Comparable{
     private int id;
     private int stock;
 
+
+
+    private int critical;
+
     //Constructeur
-    public Produits (String pNom, String category, float pPrix, int ptab){
+    public Produits (String pNom, String category, float pPrix, int ptab, int critical){
         this.nomProduits= pNom;
         this.prixProduits = pPrix;
         this.nbreProduitsPlus = 0;
         this.tab=ptab;
         this.category = category;
         this.id = ID;
+        this.critical = critical;
         ID++;
 
     }
@@ -46,6 +51,7 @@ public class Produits implements Comparable{
     public float getPrixProduits() {
         return prixProduits;
     }
+
     public void setPrixProduits(float prixProduits) {
         this.prixProduits = prixProduits;
     }
@@ -53,6 +59,7 @@ public class Produits implements Comparable{
     public int getTab() {
         return tab;
     }
+
     public void setTab(int tab) {
         this.tab = tab;
     }
@@ -64,6 +71,7 @@ public class Produits implements Comparable{
     public int getStock() {
         return this.stock;
     }
+
     public void setStock(int stock) {
         this.stock = stock;
     }
@@ -71,12 +79,23 @@ public class Produits implements Comparable{
     public String getCategory() {
         return category;
     }
+
     public void setCategory(String category) {
         this.category = category;
     }
 
+    public int getCritical() {
+        return critical;
+    }
 
-   //Methodes de classe
+    public void setCritical(int critical) {
+        this.critical = critical;
+    }
+
+    //Methodes de classe
+    /**
+    * Retourne une descrition sous la forme: NomProduits: nbreAchete
+    * */
     public String toString(){
         return this.getNomProduits()+": "+tabQuant[this.getTab()];
     }

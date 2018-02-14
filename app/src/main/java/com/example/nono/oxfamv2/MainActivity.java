@@ -44,43 +44,43 @@ public class MainActivity extends AppCompatActivity {
 /* Le prochain produit portera le nombre 25 dans le tableau des entiers*/
 
     //CHIPS
-    Produits Chips_sel= new Produits("Sel","Chips", 1.2f, 0);
-    Produits Chips_paprika = new Produits("Paprika","Chips", 1.2f, 1);
-    Produits Chips_tacos = new Produits("Tacos","Chips", 1.2f, 2);
-    Produits Chips_caca = new Produits("Cacahuètes","Chips", 2.5f, 23);
+    Produits Chips_sel= new Produits("Sel","Chips", 1.2f, 0, 20);
+    Produits Chips_paprika = new Produits("Paprika","Chips", 1.2f, 1, 20);
+    Produits Chips_tacos = new Produits("Tacos","Chips", 1.2f, 2, 20);
+    Produits Chips_caca = new Produits("Cacahuètes","Chips", 2.5f, 23, 20);
 
     //CHOCOLAT
-    Produits Chocolat_lait = new Produits("Lait","Chocolat",0.9f,3);
-    Produits Chocolat_noir = new Produits("Noir","Chocolat",0.9f,4);
-    Produits Chocolat_nois = new Produits("Noisettes","Chocolat",0.9f, 5);
-    Produits Chocolat_praline = new Produits("Praliné","Chocolat",0.9f, 6);
-    Produits Chocolat_blanc = new Produits ("Blanc","Chocolat",0.9f,7);
+    Produits Chocolat_lait = new Produits("Lait","Chocolat",0.9f,3, 20);
+    Produits Chocolat_noir = new Produits("Noir","Chocolat",0.9f,4, 20);
+    Produits Chocolat_nois = new Produits("Noisettes","Chocolat",0.9f, 5, 20);
+    Produits Chocolat_praline = new Produits("Praliné","Chocolat",0.9f, 6, 20);
+    Produits Chocolat_blanc = new Produits ("Blanc","Chocolat",0.9f,7, 20);
 
     //JUS
-    Produits Jus_orange = new Produits("Orange","Jus",0.6f,8);
-    Produits Jus_tropical = new Produits("Tropical","Jus",0.6f,9);
-    Produits Jus_world = new Produits("Worldsh.","Jus",0.6f,10);
-    Produits Jus_pomme = new Produits("Pomme","Jus",0.6f,22);
-    Produits Jus_vidange = new Produits("Vidange","Jus",-0.1f,11);
+    Produits Jus_orange = new Produits("Orange","Jus",0.6f,8, 20);
+    Produits Jus_tropical = new Produits("Tropical","Jus",0.6f,9, 20);
+    Produits Jus_world = new Produits("Worldsh.","Jus",0.6f,10, 20);
+    Produits Jus_pomme = new Produits("Pomme","Jus",0.6f,22, 20);
+    Produits Jus_vidange = new Produits("Vidange","Jus",-0.1f,11, 20);
 
     //BONBONS
-    Produits Bon_SuMiel = new Produits("Su. Miel","Bonbons", 0.3f,12);
-    Produits Bon_SaSuMiel = new Produits("Sa. Su. Miel","Bonbons", 1.9f,13);
-    Produits Bon_cafe = new Produits("Bon. Café","Bonbons", 0.1f,14);
-    Produits Bon_SaCafe = new Produits("Sa. Bon. Café.","Bonbons", 1.6f,15);
-    Produits Bon_ourson = new Produits("Oursons","Bonbons", 1.6f,16);
+    Produits Bon_SuMiel = new Produits("Su. Miel","Bonbons", 0.3f,12, 20);
+    Produits Bon_SaSuMiel = new Produits("Sa. Su. Miel","Bonbons", 1.9f,13, 20);
+    Produits Bon_cafe = new Produits("Bon. Café","Bonbons", 0.1f,14, 30);
+    Produits Bon_SaCafe = new Produits("Sa. Bon. Café.","Bonbons", 1.6f,15, 20);
+    Produits Bon_ourson = new Produits("Oursons","Bonbons", 1.6f,16, 20);
 
     //SOFTS
-    Produits Soft_cola = new Produits ("Coca","Soft",1.0f,17);
-    Produits Soft_IceTea = new Produits("Ice Tea","Soft", 1.0f,18);
-    Produits Soft_limonade = new Produits("Limonade","Soft",1.0f,19);
+    Produits Soft_cola = new Produits ("Coca","Soft",1.0f,17, 20);
+    Produits Soft_IceTea = new Produits("Ice Tea","Soft", 1.0f,18, 20);
+    Produits Soft_limonade = new Produits("Limonade","Soft",1.0f,19, 20);
 
     //BARRES
-    Produits Barre_nougat = new Produits ("Nougat","Barre",0.6f,20);
-    Produits Barre_sesame = new Produits("Sésame","Barre",0.5f,21);
+    Produits Barre_nougat = new Produits ("Nougat","Barre",0.6f,20, 20);
+    Produits Barre_sesame = new Produits("Sésame","Barre",0.5f,21, 20);
 
     //PROMOS
-    Produits Promos_jusChoco = new Produits("Jus+Choco.","Promos",1.5f,24);
+    Produits Promos_jusChoco = new Produits("Jus+Choco.","Promos",1.5f,24, 20);
 
     public Produits listeProduits[]={Chips_sel, Chips_paprika, Chips_tacos, Chocolat_lait,Chocolat_noir,Chocolat_nois,
             Chocolat_praline,Chocolat_blanc, Jus_orange,Jus_tropical, Jus_vidange, Jus_world, Bon_SuMiel, Bon_SaSuMiel, Bon_cafe,
@@ -276,6 +276,9 @@ public class MainActivity extends AppCompatActivity {
 
     //CALCUL ET AFFICHAGE DE L'ADDITION
     public void affichageTotal (final Produits objet, final TextView viewFinal){
+        Product_Stock prod = ((Product_Stock)(StockDB.getData().get(objet.getTab())));
+        if(prod.getStock()<objet.getCritical())
+            viewFinal.setTextColor(Color.RED);
         viewFinal.setText(objet.getNomProduits()+": "+tabQuant[objet.getTab()]);
     }
 
@@ -324,7 +327,7 @@ public class MainActivity extends AppCompatActivity {
                 stockTrie.add((Product_Stock)StockDB.getData().get(b));
             }
             Collections.sort(stockTrie);
-
+            
             File file = new File(Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOCUMENTS),fileName);//Creation du fichier
             pr = new PrintWriter(file);
 
