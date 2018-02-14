@@ -4,12 +4,15 @@ import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.graphics.Color;
+import android.graphics.Typeface;
 import android.media.Image;
 import android.os.Bundle;
 import android.os.Environment;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.text.InputType;
+import android.view.Gravity;
 import android.view.MenuItem;
 import android.view.MotionEvent;
 import android.view.View;
@@ -61,11 +64,11 @@ public class MainActivity extends AppCompatActivity {
     Produits Jus_vidange = new Produits("Vidange","Jus",-0.1f,11);
 
     //BONBONS
-    Produits Bon_SuMiel = new Produits("Su. Miel","Bon", 0.3f,12);
-    Produits Bon_SaSuMiel = new Produits("Sa. Su. Miel","Bon", 1.9f,13);
-    Produits Bon_cafe = new Produits("Bon. Café","Bon", 0.1f,14);
-    Produits Bon_SaCafe = new Produits("Sa. Bon. Café.","Bon", 1.6f,15);
-    Produits Bon_ourson = new Produits("Oursons","Bon", 1.6f,16);
+    Produits Bon_SuMiel = new Produits("Su. Miel","Bonbons", 0.3f,12);
+    Produits Bon_SaSuMiel = new Produits("Sa. Su. Miel","Bonbons", 1.9f,13);
+    Produits Bon_cafe = new Produits("Bon. Café","Bonbons", 0.1f,14);
+    Produits Bon_SaCafe = new Produits("Sa. Bon. Café.","Bonbons", 1.6f,15);
+    Produits Bon_ourson = new Produits("Oursons","Bonbons", 1.6f,16);
 
     //SOFTS
     Produits Soft_cola = new Produits ("Coca","Soft",1.0f,17);
@@ -132,7 +135,7 @@ public class MainActivity extends AppCompatActivity {
             nbreBonCafe,nbreBonSaCafe,nbreBonOurson, nbreSoftCola, nbreSoftIceTea,nbreSoftLimonade, nbreBarreNougat,nbreBarreSesame,nbreJusPomme,
             nbreChipsCaca, nbrePromosJusChoco};
 
-    //METHODES STOCK n
+    //METHODES STOCK
 
     @SuppressLint("ClickableViewAccessibility")
     public void stock (final Product_Stock objet, final TextView textProduit, final TextView textProduitPlus, ImageView imageProduit) {
@@ -147,22 +150,33 @@ public class MainActivity extends AppCompatActivity {
             public boolean onTouch(View v, MotionEvent event) {
                 AlertDialog.Builder alert = new AlertDialog.Builder(MainActivity.this);
 
-                alert.setTitle("Gestion des stocks");
+                //Creation du titre
+                TextView myTitle = new TextView(MainActivity.this);
+                myTitle.setText("Gestion des stocks");
+                myTitle.setTextSize(25);
+                myTitle.setTypeface(null,Typeface.BOLD);
+                myTitle.setGravity(Gravity.CENTER_HORIZONTAL);
+                myTitle.setTextColor(Color.DKGRAY);
+                alert.setCustomTitle(myTitle);
 
                 final TextView aj = new TextView(MainActivity.this);
                 aj.setText("Ajouter au stock");
+                aj.setGravity(Gravity.CENTER_HORIZONTAL);
                 alert.setView(aj);
 
                 final EditText input = new EditText(MainActivity.this);
                 alert.setView(input);
+                input.setGravity(Gravity.CENTER_HORIZONTAL);
 
                 final TextView modif = new TextView(MainActivity.this);
                 modif.setText("Modifier le stock total");
+                modif.setGravity(Gravity.CENTER_HORIZONTAL);
 
                 String givenStock = String.valueOf(objet.getStock());
 
                 final EditText editModif = new EditText(MainActivity.this);
                 editModif.setText(givenStock);
+                editModif.setGravity(Gravity.CENTER_HORIZONTAL);
                 alert.setView(editModif);
 
                 alert.setPositiveButton("Sauvegarder", new DialogInterface.OnClickListener() {
@@ -178,6 +192,7 @@ public class MainActivity extends AppCompatActivity {
 
                 LinearLayout ll = new LinearLayout(MainActivity.this);
                 ll.setOrientation(LinearLayout.VERTICAL);
+
                 ll.addView(aj);
                 ll.addView(input);
                 ll.addView(modif);
@@ -303,6 +318,13 @@ public class MainActivity extends AppCompatActivity {
             }
             Collections.sort(listeTriee);
 
+            ArrayList<Product_Stock> stockTrie = new ArrayList<>();
+            for(int b=0;b<StockDB.getData().size();b++)
+            {
+                stockTrie.add((Product_Stock)StockDB.getData().get(b));
+            }
+            Collections.sort(stockTrie);
+
             File file = new File(Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOCUMENTS),fileName);//Creation du fichier
             pr = new PrintWriter(file);
 
@@ -314,20 +336,22 @@ public class MainActivity extends AppCompatActivity {
             pr.println(vendeur1+"    "+vendeur2);
             pr.println(vendeur3+"    "+vendeur4);
             pr.println("--------------------------------------------------------");
+
             String first = listeTriee.get(0).getCategory();
             pr.println(first);
+            pr.println("-----------------");
             String a;
             for(int j = 0;j<listeTriee.size();j++)
             {
                 a = (listeTriee.get(j).getCategory());
                 if(a.equals(first))
-                    pr.println(listeTriee.get(j).toString());
+                    pr.println(listeTriee.get(j).toString()+" - Reste: "+stockTrie.get(j).getStock());
                 else{
                     pr.println();
                     first = a;
                     pr.println(first);
                     pr.println("-----------------");
-                    pr.println(listeTriee.get(j));
+                    pr.println(listeTriee.get(j).toString()+" - Reste: "+stockTrie.get(j).getStock());
                 }
             }
             pr.println("--------------------------------------------------------");
@@ -336,13 +360,22 @@ public class MainActivity extends AppCompatActivity {
             //Affichage du Toast
             Context context = getApplicationContext();
             CharSequence text = "Fichier correctement imprimé!";
-            int duration = Toast.LENGTH_LONG;
+            int duration = Toast.LENGTH_SHORT;
             Toast toast = Toast.makeText(context, text, duration);
             toast.show();
             pr.close();//Fermeture du flux
         } catch (IOException p) {
-            System.out.println("Fichier non créé! IO " + "msg: " + p.toString());
-            pr.close();
+            Toast toast = Toast.makeText(getApplicationContext(), "Erreur: IOException: Mentionner à Mme Deceuninck", Toast.LENGTH_SHORT);
+            toast.show();
+            System.out.println(p.getMessage());
+            if(pr!=null)
+                    pr.close();
+        }
+        catch (IndexOutOfBoundsException m){
+            Toast toast = Toast.makeText(getApplicationContext(), "Erreur: OutOfBoundsException: Mentionner à Mme Deceuninck", Toast.LENGTH_SHORT);
+            toast.show();
+            if(pr!=null)
+                pr.close();
         }
     }
 }

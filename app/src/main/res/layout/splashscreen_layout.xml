@@ -12,12 +12,13 @@
         android:src="@mipmap/oxfam_logo" />
 
     <TextView
+        android:id="@+id/textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceSmall"
-        android:text="@string/developed"
-        android:id="@+id/textView"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
+        android:text="@string/developed"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:textSize="14sp"
         android:textStyle="italic" />
 </RelativeLayout>
