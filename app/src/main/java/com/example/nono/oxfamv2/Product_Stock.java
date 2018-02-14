@@ -61,6 +61,16 @@ public class Product_Stock implements Parcelable, Comparable{
         this.stock = stock;
     }
 
+    public void addStockInt() {
+        int tempStock = Integer.parseInt(this.stock) - 1;
+        this.stock = String.valueOf(tempStock);
+    }
+
+    public void deduceStockInt() {
+        int tempstock = Integer.parseInt(this.stock) + 1;
+        this.stock = String.valueOf(tempstock);
+    }
+
     public String getType() {
         return this.type;
     }
@@ -72,6 +82,8 @@ public class Product_Stock implements Parcelable, Comparable{
     public int getStock() {
         return Integer.parseInt(this.stock);
     }
+
+    public  String getStockString() {return this.stock;}
 
     public String getID() { return  String.valueOf(this.ID);}
 

@@ -42,7 +42,6 @@ public class Splashscreen extends MainActivity {
                 StockDB stock = new StockDB(Splashscreen.this);
                 stock.initialization();
 
-                System.out.println("Log: test");
             }
 
             @Override

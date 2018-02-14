@@ -39,11 +39,19 @@ public class StockManagment extends Fragment {
 
         Button AddButton = view.findViewById(R.id.addition_button);
         AddButton.setVisibility(View.GONE);
+
+        ImageView promo = view.findViewById(R.id.promos_img);
+        promo.setVisibility(View.GONE);
+
+        ImageView promosBtn = view.findViewById(R.id.promos_button);
+        promosBtn.setVisibility(View.GONE);
+
         return view;
     }
 
     @Override
     public void onActivityCreated(Bundle savedInstanceState) {
+
         super.onActivityCreated(savedInstanceState);
 
         System.out.println("Log: Stock size "+stock.size());
@@ -68,6 +76,7 @@ public class StockManagment extends Fragment {
             public boolean onTouch(View v, MotionEvent event) {
                 Intent chocolate_start = new Intent(getActivity(), Chocolate.class);
                 chocolate_start.putExtra("Uniqid","Prof");
+                chocolate_start.putExtra("List", (ArrayList<? extends Parcelable>) stock);
                 startActivity(chocolate_start);
                 return false;
             }
@@ -80,6 +89,7 @@ public class StockManagment extends Fragment {
             public boolean onTouch(View v, MotionEvent event) {
                 Intent juice_start = new Intent(getActivity(), Juice.class);
                 juice_start.putExtra("Uniqid","Prof");
+                juice_start.putExtra("List", (ArrayList<? extends Parcelable>) stock);
                 startActivity(juice_start);
                 return false;
             }
@@ -92,6 +102,7 @@ public class StockManagment extends Fragment {
             public boolean onTouch(View v, MotionEvent event) {
                 Intent candy_start = new Intent(getActivity(), Candy.class);
                 candy_start.putExtra("Uniqid","Prof");
+                candy_start.putExtra("List", (ArrayList<? extends Parcelable>) stock);
                 startActivity(candy_start);
                 return false;
             }
@@ -104,6 +115,7 @@ public class StockManagment extends Fragment {
             public boolean onTouch(View v, MotionEvent event) {
                 Intent soft_start = new Intent(getActivity(), Soft.class);
                 soft_start.putExtra("Uniqid","Prof");
+                soft_start.putExtra("List", (ArrayList<? extends Parcelable>) stock);
                 startActivity(soft_start);
                 return false;
             }
@@ -129,6 +141,7 @@ public class StockManagment extends Fragment {
             public void onClick(View view) {
                 Intent addition_start= new Intent(getActivity(), Name.class);
                 addition_start.putExtra("Uniqid","Prof");
+                addition_start.putExtra("List", (ArrayList<? extends Parcelable>) stock);
                 startActivity(addition_start);
             }
         });
@@ -140,6 +153,7 @@ public class StockManagment extends Fragment {
             public boolean onTouch(View v, MotionEvent event) {
                 Intent promos_start = new Intent(getActivity(), Promos.class);
                 promos_start.putExtra("Uniqid","Prof");
+                promos_start.putExtra("List", (ArrayList<? extends Parcelable>) stock);
                 startActivity(promos_start);
                 return false;
             }

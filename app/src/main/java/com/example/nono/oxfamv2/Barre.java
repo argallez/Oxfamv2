@@ -16,8 +16,8 @@ import java.util.ArrayList;
 
 public class Barre extends MainActivity {
 
-    Product_Stock Nougat;
-    Product_Stock Sesam;
+    private static Product_Stock Nougat;
+    private static Product_Stock Sesam;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -29,23 +29,24 @@ public class Barre extends MainActivity {
         System.out.println("Log: Recu " + strdata);
         ArrayList<Product_Stock> stockList = (ArrayList<Product_Stock>) getIntent().getSerializableExtra("List");
 
-        if (strdata.equals("Prof")) {
-            Button back = findViewById(R.id.back_button);
+        if(Nougat == null && Sesam == null) {
 
-            final Intent backI = new Intent(this, Secure.class);
-
-            for(int i = 0; i < stockList.size(); i++) {
+            for (int i = 0; i < stockList.size(); i++) {
 
                 System.out.println("Log: " + stockList.get(i).getName());
 
-                if(stockList.get(i).getName().equals("Nougat"))
+                if (stockList.get(i).getName().equals("Nougat"))
                     Nougat = stockList.get(i);
-                if(stockList.get(i).getName().equals("Sésame"))
+                if (stockList.get(i).getName().equals("Sésame"))
                     Sesam = stockList.get(i);
             }
+        }
 
-            System.out.println("Log: " +Nougat.getName());
-            System.out.println("Log: " +Sesam.getName());
+        if (strdata.equals("Prof")) {
+
+            Button back = findViewById(R.id.back_button);
+
+            final Intent backI = new Intent(this, Secure.class);
 
             stock(Nougat, (TextView) findViewById(R.id.viewNbreNougat), (TextView) findViewById(R.id.viewNougatPlus), (ImageView) findViewById(R.id.nougat_button));
             stock(Sesam, (TextView) findViewById(R.id.viewNbreSesame), (TextView) findViewById(R.id.viewSesamePlus), (ImageView) findViewById(R.id.sesame_button));
@@ -57,14 +58,13 @@ public class Barre extends MainActivity {
                     finish();
                 }
             });
-
         }
 
         else {
             Button back = findViewById(R.id.back_button);
             back_button(back);
-            achat(Barre_nougat, (TextView) findViewById(R.id.viewNbreNougat), (TextView) findViewById(R.id.viewNougatPlus), (ImageView) findViewById(R.id.nougat_button));
-            achat(Barre_sesame, (TextView) findViewById(R.id.viewNbreSesame), (TextView) findViewById(R.id.viewSesamePlus), (ImageView) findViewById(R.id.sesame_button));
+            achat(Nougat, Barre_nougat, (TextView) findViewById(R.id.viewNbreNougat), (TextView) findViewById(R.id.viewNougatPlus), (ImageView) findViewById(R.id.nougat_button));
+            achat(Sesam, Barre_sesame, (TextView) findViewById(R.id.viewNbreSesame), (TextView) findViewById(R.id.viewSesamePlus), (ImageView) findViewById(R.id.sesame_button));
         }
     }
 }
