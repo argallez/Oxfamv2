@@ -39,7 +39,6 @@ public class MainActivity extends AppCompatActivity {
     public static String vendeur3;
     public static String vendeur4;
 
-
     //DECLARATION DES PRODUITS
 /* Le prochain produit portera le nombre 25 dans le tableau des entiers*/
 
@@ -237,7 +236,11 @@ public class MainActivity extends AppCompatActivity {
     }
 
     //METHODES PRINCIPALES
-    public void achat (final Produits objet, final TextView textProduit, final TextView textProduitPlus, ImageView imageProduit){
+    public void achat (final Product_Stock stock, final Produits objet, final TextView textProduit, final TextView textProduitPlus, ImageView imageProduit){
+        final StockDB stockDB = new StockDB(MainActivity.this);
+
+        System.out.println("Log: Product stock name " +stock.getName());
+
         textProduit.setText(objet.getNomProduits() + ": " + tabQuant[objet.getTab()]);
 
         assert textProduit != null;
@@ -249,9 +252,17 @@ public class MainActivity extends AppCompatActivity {
                 textProduit.setText(objet.getNomProduits() + ": " + tabQuant[objet.getTab()]);
                 textProduitPlus.setText("+" + objet.getNbreProduitsPlus());
                 System.out.println(tabQuant[objet.getTab()]);
+
+                stock.addStockInt();
+
+                System.out.println("Log: Stock added " + stock.getStockString());
+
+                stockDB.stockUpdate(stock, stock.getStockString());
+
                 return false;
             }
         });
+
         textProduitPlus.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -259,15 +270,22 @@ public class MainActivity extends AppCompatActivity {
                 textProduit.setText(objet.getNomProduits() + ": " + tabQuant[objet.getTab()]);
                 objet.setNbreProduitsPlus(objet.getNbreProduitsPlus()-1);
                 textProduitPlus.setText("+" + objet.getNbreProduitsPlus());
+
+                stock.deduceStockInt();
+
+                System.out.println("Log: Stock deduced " + stock.getStockString());
+
+                stockDB.stockUpdate(stock, stock.getStockString());
             }
         });
-
     }
+
     public void back_button(Button button) {
         final Intent backI = new Intent(this, MainScreen.class);
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
                 startActivity(backI);
                 finish();
             }
@@ -298,8 +316,6 @@ public class MainActivity extends AppCompatActivity {
         }
         recette=(recette*100)/100;
     }
-
-
 
     /*
     * @pre -

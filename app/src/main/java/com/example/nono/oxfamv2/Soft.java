@@ -7,11 +7,17 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import java.util.ArrayList;
+
 /**
  * Created by Nono on 04-09-17.
  */
 
 public class Soft extends MainActivity {
+
+    private static Product_Stock coca;
+    private static Product_Stock iceTea;
+    private static Product_Stock limonade;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -20,24 +26,33 @@ public class Soft extends MainActivity {
 
         Intent intent = this.getIntent();
         String strdata = intent.getExtras().getString("Uniqid");
+        System.out.println("Log: Recu " + strdata);
+        ArrayList<Product_Stock> stockList = (ArrayList<Product_Stock>) getIntent().getSerializableExtra("List");
 
-        if(!(strdata.equals("Prof"))) {
-            Button back = findViewById(R.id.back_button);
-            back_button(back);
-            achat(Soft_cola,(TextView) findViewById(R.id.viewNbreCola),(TextView) findViewById(R.id.viewColaPlus), (ImageView)findViewById(R.id.cola_button));
-            achat(Soft_IceTea,(TextView) findViewById(R.id.viewNbreIcetea),(TextView) findViewById(R.id.viewIceteaPlus), (ImageView)findViewById(R.id.icetea_button));
-            achat(Soft_limonade,(TextView) findViewById(R.id.viewNbreLimonade),(TextView) findViewById(R.id.viewLimonadePlus), (ImageView)findViewById(R.id.limonade_button));
+        if (coca == null) {
+
+            for (int i = 0; i < stockList.size(); i++) {
+
+                System.out.println("Log: " + stockList.get(i).getName());
+
+                if (stockList.get(i).getName().equals("Coca"))
+                    coca = stockList.get(i);
+                if (stockList.get(i).getName().equals("Ice Tea"))
+                    iceTea = stockList.get(i);
+                if (stockList.get(i).getName().equals("Limonade"))
+                    limonade = stockList.get(i);
+            }
         }
-        else {
+
+        if (strdata.equals("Prof")) {
+
             Button back = findViewById(R.id.back_button);
-
-            StockManagment sm = new StockManagment();
-
-            //sm.ajouté(Soft_cola,(TextView) findViewById(R.id.viewNbreCola),(TextView) findViewById(R.id.viewColaPlus), (ImageView)findViewById(R.id.cola_button));
-            //sm.ajouté(Soft_IceTea,(TextView) findViewById(R.id.viewNbreIcetea),(TextView) findViewById(R.id.viewIceteaPlus), (ImageView)findViewById(R.id.icetea_button));
-            //sm.ajouté(Soft_limonade,(TextView) findViewById(R.id.viewNbreLimonade),(TextView) findViewById(R.id.viewLimonadePlus), (ImageView)findViewById(R.id.limonade_button));
 
             final Intent backI = new Intent(this, Secure.class);
+
+            stock(coca, (TextView) findViewById(R.id.viewNbreCola),(TextView) findViewById(R.id.viewColaPlus), (ImageView)findViewById(R.id.cola_button));
+            stock(iceTea, (TextView) findViewById(R.id.viewNbreIcetea),(TextView) findViewById(R.id.viewIceteaPlus), (ImageView)findViewById(R.id.icetea_button));
+            stock(limonade, (TextView) findViewById(R.id.viewNbreLimonade),(TextView) findViewById(R.id.viewLimonadePlus), (ImageView)findViewById(R.id.limonade_button));
 
             back.setOnClickListener(new View.OnClickListener() {
                 @Override
@@ -46,6 +61,15 @@ public class Soft extends MainActivity {
                     finish();
                 }
             });
+        }
+
+        else {
+            Button back = findViewById(R.id.back_button);
+            back_button(back);
+
+            achat(coca, Soft_cola,(TextView) findViewById(R.id.viewNbreCola),(TextView) findViewById(R.id.viewColaPlus), (ImageView)findViewById(R.id.cola_button));
+            achat(iceTea, Soft_IceTea,(TextView) findViewById(R.id.viewNbreIcetea),(TextView) findViewById(R.id.viewIceteaPlus), (ImageView)findViewById(R.id.icetea_button));
+            achat(limonade, Soft_limonade,(TextView) findViewById(R.id.viewNbreLimonade),(TextView) findViewById(R.id.viewLimonadePlus), (ImageView)findViewById(R.id.limonade_button));
         }
     }
 }
