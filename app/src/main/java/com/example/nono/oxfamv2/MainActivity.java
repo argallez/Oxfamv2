@@ -247,17 +247,22 @@ public class MainActivity extends AppCompatActivity {
         imageProduit.setOnTouchListener(new View.OnTouchListener() {
             @Override
             public boolean onTouch(View v, MotionEvent event) {
-                tabQuant[objet.getTab()]++;
-                objet.setNbreProduitsPlus(objet.getNbreProduitsPlus()+1);
-                textProduit.setText(objet.getNomProduits() + ": " + tabQuant[objet.getTab()]);
-                textProduitPlus.setText("+" + objet.getNbreProduitsPlus());
-                System.out.println(tabQuant[objet.getTab()]);
+                if(stock.getStock() > 0) {
+                    tabQuant[objet.getTab()]++;
+                    objet.setNbreProduitsPlus(objet.getNbreProduitsPlus() + 1);
+                    textProduit.setText(objet.getNomProduits() + ": " + tabQuant[objet.getTab()]);
+                    textProduitPlus.setText("+" + objet.getNbreProduitsPlus());
+                    System.out.println(tabQuant[objet.getTab()]);
 
-                stock.addStockInt();
+                    stock.addStockInt();
 
-                System.out.println("Log: Stock added " + stock.getStockString());
+                    System.out.println("Log: Stock added " + stock.getStockString());
 
-                stockDB.stockUpdate(stock, stock.getStockString());
+                    stockDB.stockUpdate(stock, stock.getStockString());
+                }
+                else {
+                    Toast.makeText(MainActivity.this, "Plus en stock", Toast.LENGTH_SHORT).show();
+                }
 
                 return false;
             }
