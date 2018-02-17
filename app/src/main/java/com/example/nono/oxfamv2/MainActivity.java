@@ -28,6 +28,8 @@ import org.w3c.dom.Text;
 import java.io.File;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.text.DecimalFormat;
+import java.text.NumberFormat;
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Collections;
@@ -337,7 +339,7 @@ public class MainActivity extends AppCompatActivity {
     * */
     public void affichageTotal (final Produits objet, final TextView viewFinal){
         Product_Stock prod = (Product_Stock) StockDB.getData().get(objet.getTab());
-        if(prod.getStock()<objet.getCritical()) {
+        if(prod.getStock()-tabQuant[objet.getTab()]<objet.getCritical()) {
             viewFinal.setTextColor(Color.RED);
             viewFinal.setText(objet.getNomProduits()+": "+tabQuant[objet.getTab()]);
         }
@@ -354,14 +356,15 @@ public class MainActivity extends AppCompatActivity {
     int longueur=listeProduits.length;
     public float tabAdditionFinale[]=new float[longueur];
     public float recette;
-    public void calculAddition() {
+    public void calculAddition(TextView finalAmount) {
+        NumberFormat format = new DecimalFormat("#0.00");
         for (int i = 0; i < longueur; i++) {
             tabAdditionFinale[i] = tabQuant[listeProduits[i].getTab()] * listeProduits[i].getPrixProduits();
         }
         for (int j=0; j<longueur;j++){
             recette=recette+tabAdditionFinale[j];
         }
-        recette=(recette*100)/100;
+        finalAmount.setText("Recette Totale: "+format.format(recette)+" €");
     }
 
     /*
