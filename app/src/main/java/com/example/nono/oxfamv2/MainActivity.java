@@ -236,6 +236,9 @@ public class MainActivity extends AppCompatActivity {
     }
 
     //METHODES PRINCIPALES
+    /*
+    * Achat prenant en compte le stock
+    * */
     public void achat (final Product_Stock stock, final Produits objet, final TextView textProduit, final TextView textProduitPlus, ImageView imageProduit){
         final StockDB stockDB = new StockDB(MainActivity.this);
 
@@ -284,13 +287,43 @@ public class MainActivity extends AppCompatActivity {
             }
         });
     }
+    /*
+    * Achat sans le stock (promos principalement)
+    * */
+    public void achat (final Produits objet, final TextView textProduit, final TextView textProduitPlus, ImageView imageProduit){
+         textProduit.setText(objet.getNomProduits() + ": " + tabQuant[objet.getTab()]);
+        assert textProduit != null;
+        imageProduit.setOnTouchListener(new View.OnTouchListener() {
+            @Override
+            public boolean onTouch(View v, MotionEvent event) {
 
+                    tabQuant[objet.getTab()]++;
+                    objet.setNbreProduitsPlus(objet.getNbreProduitsPlus() + 1);
+                    textProduit.setText(objet.getNomProduits() + ": " + tabQuant[objet.getTab()]);
+                    textProduitPlus.setText("+" + objet.getNbreProduitsPlus());
+                    System.out.println(tabQuant[objet.getTab()]);
+                    return false;
+            }
+        });
+
+        textProduitPlus.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                tabQuant[objet.getTab()] --;
+                textProduit.setText(objet.getNomProduits() + ": " + tabQuant[objet.getTab()]);
+                objet.setNbreProduitsPlus(objet.getNbreProduitsPlus()-1);
+                textProduitPlus.setText("+" + objet.getNbreProduitsPlus());
+            }
+        });
+    }
+    /*
+    * Renvoie a l'Activity precedente
+    * */
     public void back_button(Button button) {
         final Intent backI = new Intent(this, MainScreen.class);
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
                 startActivity(backI);
                 finish();
             }
@@ -298,15 +331,24 @@ public class MainActivity extends AppCompatActivity {
     }
 
     //CALCUL ET AFFICHAGE DE L'ADDITION
+
+    /*
+    * Methode affichant les achats de la journee sur l'ecran final
+    * */
     public void affichageTotal (final Produits objet, final TextView viewFinal){
-        Product_Stock prod = ((Product_Stock)(StockDB.getData().get(objet.getTab())));
-        if(prod.getStock()<objet.getCritical())
+        Product_Stock prod = (Product_Stock) StockDB.getData().get(objet.getTab());
+        if(prod.getStock()<objet.getCritical()) {
             viewFinal.setTextColor(Color.RED);
-        viewFinal.setText(objet.getNomProduits()+": "+tabQuant[objet.getTab()]);
+            viewFinal.setText(objet.getNomProduits()+": "+tabQuant[objet.getTab()]);
+        }
+        else {
+            viewFinal.setTextColor(Color.DKGRAY);
+            viewFinal.setText(objet.getNomProduits() + ": " + tabQuant[objet.getTab()]);
+        }
     }
 
     /*
-    * Methode calculant l'addition total de la journee
+    * Methode calculant l'addition totale de la journee
     */
 
     int longueur=listeProduits.length;
@@ -348,7 +390,7 @@ public class MainActivity extends AppCompatActivity {
                 stockTrie.add((Product_Stock)StockDB.getData().get(b));
             }
             Collections.sort(stockTrie);
-            
+
             File file = new File(Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOCUMENTS),fileName);//Creation du fichier
             pr = new PrintWriter(file);
 
