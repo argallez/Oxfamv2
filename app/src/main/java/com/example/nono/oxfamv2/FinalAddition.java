@@ -85,9 +85,7 @@ public class FinalAddition extends MainActivity {
             //PROMOS
             affichageTotal(Promos_jusChoco, (TextView) findViewById(R.id.viewJusChocoFinal));
 
-            calculAddition();
-            TextView affichageRecette = findViewById(R.id.viewMontantTotal);
-            affichageRecette.setText("Recette Totale: " + recette + "€");
+            calculAddition((TextView)findViewById(R.id.viewMontantTotal));
 
             printDay();
         }

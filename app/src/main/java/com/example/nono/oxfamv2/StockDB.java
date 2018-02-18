@@ -20,7 +20,7 @@ import java.util.ArrayList;
 
 public class StockDB extends SQLiteOpenHelper {
 
-    static ArrayList<Product_Stock> data = new ArrayList<>();
+    static ArrayList<Product_Stock> data = new ArrayList<Product_Stock>();
 
     private static final int DATA_BASE_VERSION = 1;
 

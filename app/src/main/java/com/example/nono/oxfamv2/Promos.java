@@ -25,7 +25,7 @@ public class Promos extends MainActivity {
         System.out.println("Log: Recu " + strdata);
         ArrayList<Product_Stock> stockList = (ArrayList<Product_Stock>) getIntent().getSerializableExtra("List");
 
-        //achat(Promos_jusChoco,(TextView) findViewById(R.id.viewNbreJusChoco),(TextView) findViewById(R.id.viewJusChocoPlus), (ImageView)findViewById(R.id.juschoco_button));
+        achat(Promos_jusChoco,(TextView) findViewById(R.id.viewNbreJusChoco),(TextView) findViewById(R.id.viewJusChocoPlus), (ImageView)findViewById(R.id.juschoco_button));
 
     }
 }
