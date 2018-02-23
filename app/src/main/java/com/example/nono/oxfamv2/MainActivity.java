@@ -42,13 +42,14 @@ public class MainActivity extends AppCompatActivity {
     public static String vendeur4;
 
     //DECLARATION DES PRODUITS
-/* Le prochain produit portera le nombre 25 dans le tableau des entiers*/
+/* Le prochain produit portera le nombre 26 dans le tableau des entiers*/
 
     //CHIPS
     Produits Chips_sel= new Produits("Sel","Chips", 1.2f, 0, 20);
     Produits Chips_paprika = new Produits("Paprika","Chips", 1.2f, 1, 20);
     Produits Chips_tacos = new Produits("Tacos","Chips", 1.2f, 2, 20);
     Produits Chips_caca = new Produits("Cacahuètes","Chips", 2.5f, 23, 20);
+    Produits Chips_banane = new Produits("Bananes","Chips",2f,25,20);
 
     //CHOCOLAT
     Produits Chocolat_lait = new Produits("Lait","Chocolat",0.9f,3, 20);
@@ -85,7 +86,8 @@ public class MainActivity extends AppCompatActivity {
 
     public Produits listeProduits[]={Chips_sel, Chips_paprika, Chips_tacos, Chocolat_lait,Chocolat_noir,Chocolat_nois,
             Chocolat_praline,Chocolat_blanc, Jus_orange,Jus_tropical, Jus_vidange, Jus_world, Bon_SuMiel, Bon_SaSuMiel, Bon_cafe,
-            Bon_SaCafe, Bon_ourson,Soft_cola,Soft_IceTea,Soft_limonade,Barre_nougat, Barre_sesame, Jus_pomme, Chips_caca, Promos_jusChoco};
+            Bon_SaCafe, Bon_ourson,Soft_cola,Soft_IceTea,Soft_limonade,Barre_nougat, Barre_sesame, Jus_pomme, Chips_caca, Promos_jusChoco
+    , Chips_banane};
 
     public Produits[] getListeProduits() {
         return listeProduits;
@@ -97,6 +99,7 @@ public class MainActivity extends AppCompatActivity {
     public static int nbreChipsPaprika;
     public static int nbreChipsTacos;
     public static int nbreChipsCaca;
+    public static int nbreChipsBan;
 
     //CHOCOLAT
     public static int nbreChocolatLait;
@@ -134,7 +137,7 @@ public class MainActivity extends AppCompatActivity {
     public static int tabQuant[]={nbreChipsSel,nbreChipsPaprika,nbreChipsTacos,nbreChocolatLait,nbreChocolatNoir,nbreChocolatNois,
             nbreChocolatPraline,nbreChocolatBlanc,nbreJusOrange,nbreJusTropical,nbreJusWorldSh,nbreJusVidange,nbreBonSuMiel,nbreBonSaSuMiel,
             nbreBonCafe,nbreBonSaCafe,nbreBonOurson, nbreSoftCola, nbreSoftIceTea,nbreSoftLimonade, nbreBarreNougat,nbreBarreSesame,nbreJusPomme,
-            nbreChipsCaca, nbrePromosJusChoco};
+            nbreChipsCaca, nbrePromosJusChoco, nbreChipsBan};
 
     //METHODES STOCK
 
