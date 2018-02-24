@@ -37,7 +37,6 @@ public class FinalAddition extends MainActivity {
             TextView viewVendeur3 = findViewById(R.id.viewVendeur3);
             TextView viewVendeur4 = findViewById(R.id.viewVendeur4);
 
-            System.out.println(vendeur1);
             viewVendeur1.setText(vendeur1);
             viewVendeur2.setText(vendeur2);
             viewVendeur3.setText(vendeur3);
@@ -50,6 +49,7 @@ public class FinalAddition extends MainActivity {
             affichageTotal(Chips_paprika, (TextView) findViewById(R.id.viewPaprikaFinal));
             affichageTotal(Chips_tacos, (TextView) findViewById(R.id.viewTacosFinal));
             affichageTotal(Chips_caca, (TextView) findViewById(R.id.viewCacaFinal));
+            affichageTotal(Chips_banane, (TextView) findViewById(R.id.viewBanFinal));
 
             //CHOCOLAT
             affichageTotal(Chocolat_lait, (TextView) findViewById(R.id.viewLaitFinal));

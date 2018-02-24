@@ -24,6 +24,7 @@ public class Chips extends MainActivity {
     private static Product_Stock paprika;
     private static Product_Stock tacos;
     private static Product_Stock cacahuetes;
+    private static Product_Stock bananes;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -50,6 +51,8 @@ public class Chips extends MainActivity {
                     tacos = stockList.get(i);
                 if (stockList.get(i).getName().equals("Cacahuètes"))
                     cacahuetes = stockList.get(i);
+                if (stockList.get(i).getName().equals("Bananes"));
+                    bananes = stockList.get(i);
             }
         }
 
@@ -62,6 +65,7 @@ public class Chips extends MainActivity {
             stock(paprika, (TextView) findViewById(R.id.viewNbrePaprika), (TextView) findViewById(R.id.viewPaprikaPlus), (ImageView) findViewById(R.id.paprika_button));
             stock(tacos, (TextView) findViewById(R.id.viewNbreTacos), (TextView) findViewById(R.id.viewTacosPlus), (ImageView) findViewById(R.id.tacos_button));
             stock(cacahuetes, (TextView) findViewById(R.id.viewNbreCaca), (TextView) findViewById(R.id.viewCacaPlus), (ImageView) findViewById(R.id.caca_button));
+            stock(bananes, (TextView) findViewById(R.id.viewNbreBan),(TextView) findViewById(R.id.viewBanPlus),(ImageView) findViewById(R.id.ban_button));
 
             back.setOnClickListener(new View.OnClickListener() {
                 @Override
@@ -81,6 +85,7 @@ public class Chips extends MainActivity {
             achat(paprika, Chips_paprika, (TextView) findViewById(R.id.viewNbrePaprika), (TextView) findViewById(R.id.viewPaprikaPlus), (ImageView) findViewById(R.id.paprika_button));
             achat(tacos, Chips_tacos, (TextView) findViewById(R.id.viewNbreTacos), (TextView) findViewById(R.id.viewTacosPlus), (ImageView) findViewById(R.id.tacos_button));
             achat(cacahuetes, Chips_caca, (TextView) findViewById(R.id.viewNbreCaca), (TextView) findViewById(R.id.viewCacaPlus), (ImageView) findViewById(R.id.caca_button));
+            achat(bananes, Chips_banane, (TextView) findViewById(R.id.viewNbreBan),(TextView) findViewById(R.id.viewBanPlus),(ImageView) findViewById(R.id.ban_button));
 
         }
     }
