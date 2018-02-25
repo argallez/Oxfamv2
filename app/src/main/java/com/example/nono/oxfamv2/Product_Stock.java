@@ -15,6 +15,8 @@ public class Product_Stock implements Parcelable, Comparable{
     private String stock;
 
     public Product_Stock(int ID, String type, String nom, String stock) {
+
+        System.out.println("Log: Name prodstock: "+nom+ " ID: " + ID);
         this.ID = ID;
         this.type = type;
         this.name = nom;
