@@ -72,7 +72,6 @@ public class StockDB extends SQLiteOpenHelper {
 
         while (res.moveToNext()) {
 
-            System.out.println("Log: ID: " + res.getString(0) + " Type: " + res.getString(res.getColumnIndex(PRODUCTTYPE)) + " Name: " + res.getString(res.getColumnIndex(PRODUCTNAME)) + " Dispo: " + res.getString(res.getColumnIndex(DISPONIBILITY)));
             int givenID = Integer.valueOf(res.getString(0));
             Product_Stock product_stock = new Product_Stock(givenID, res.getString(res.getColumnIndex(PRODUCTTYPE)), res.getString(res.getColumnIndex(PRODUCTNAME)), res.getString(res.getColumnIndex(DISPONIBILITY)));
             data.add(product_stock);

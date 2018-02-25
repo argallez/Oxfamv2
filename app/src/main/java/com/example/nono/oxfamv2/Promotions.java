@@ -7,5 +7,6 @@ package com.example.nono.oxfamv2;
 import android.support.v4.app.Fragment;
 
 
-public class Promotions extends Fragment{
+public class Promotions extends Fragment {
+
 }
